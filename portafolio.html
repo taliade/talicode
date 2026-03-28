@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Portafolio — TaliCode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0c10;--surface:#131318;--surface2:#1c1c24;--accent:#a8ff3e;--pink:#ff2d78;--text:#f0f0f5;--muted:#72728a;--border:rgba(255,255,255,0.06);--nav-bg:rgba(12,12,16,0.93);}
+body.light{--bg:#fafaf7;--surface:#fff;--surface2:#f0f0ea;--accent:#5c9900;--pink:#d4005a;--text:#0c0c10;--muted:#7a7a8e;--border:rgba(0,0,0,0.08);--nav-bg:rgba(250,250,247,0.94);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;transition:background-color .4s,color .4s,border-color .4s;}
+html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--text);font-family:'Space Mono',monospace;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:998;opacity:.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
+.grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(168,255,62,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(168,255,62,.025) 1px,transparent 1px);background-size:44px 44px;}
+.blob{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;}
+.b1{width:420px;height:420px;background:rgba(168,255,62,.07);top:-80px;right:-60px;animation:drift 11s ease-in-out infinite;}
+.b2{width:350px;height:350px;background:rgba(255,45,120,.07);bottom:-60px;left:-50px;animation:drift 14s ease-in-out infinite reverse;}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(22px,15px)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3.5rem;background:var(--nav-bg);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-.02em;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;transition:color .2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--pink);transition:width .3s;}
+.nav-links a:hover{color:var(--text);}.nav-links a:hover::after,.nav-links a.active::after{width:100%;}.nav-links a.active{color:var(--accent);}
+.tt{display:flex;align-items:center;gap:.5rem;cursor:pointer;background:none;border:1px solid var(--border);padding:.38rem .9rem;color:var(--muted);font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;}
+.tt:hover{border-color:var(--accent);color:var(--accent);}
+.tt-track{width:30px;height:16px;border-radius:8px;background:var(--border);position:relative;}
+body.light .tt-track{background:var(--accent);}
+.tt-thumb{position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--muted);transition:transform .3s,background .3s!important;}
+body.light .tt-thumb{transform:translateX(14px);background:#fff;}
+.pw{position:relative;z-index:1;padding-top:72px;}
+.ph{padding:4rem 3.5rem 2.5rem;border-bottom:1px solid var(--border);}
+.bc{display:flex;align-items:center;gap:.7rem;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.bc a{color:var(--muted);text-decoration:none;}.bc a:hover{color:var(--accent);}
+.bc-sep{color:var(--pink);opacity:.6;}.bc-c{color:var(--accent);}
+.page-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;line-height:.92;}
+.page-title .acc{color:var(--accent);}
+.filter-bar{display:flex;gap:.45rem;flex-wrap:wrap;padding:1.8rem 3.5rem;border-bottom:1px solid var(--border);background:var(--surface);}
+.fb{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:.32rem .85rem;background:none;border:1px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s;border-radius:2px;}
+.fb:hover,.fb.on{border-color:var(--accent);color:var(--accent);background:rgba(168,255,62,.05);}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin:2.5rem 3.5rem 3.5rem;}
+.pc{background:var(--surface);overflow:hidden;transition:background .3s;position:relative;}
+.pc:hover{background:var(--surface2);}
+.pc-thumb{height:170px;background:var(--surface2);border-bottom:1px solid var(--border);position:relative;display:flex;align-items:center;justify-content:center;}
+.pc-bar{position:absolute;top:0;left:0;right:0;height:2px;}
+.pc-bi{font-size:2.8rem;opacity:.25;}
+.pc-body{padding:1.7rem;}
+.pc-num{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem;}
+.pc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.45rem;}
+.pc-desc{font-size:.66rem;color:var(--muted);line-height:1.8;margin-bottom:.9rem;}
+.pc-stack{display:flex;flex-wrap:wrap;gap:.28rem;margin-bottom:1rem;}
+.pt{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:.16rem .48rem;border:1px solid var(--border);color:var(--muted);}
+.pt.g{border-color:rgba(168,255,62,.3);color:var(--accent);background:rgba(168,255,62,.05);}
+.pt.p{border-color:rgba(255,45,120,.3);color:var(--pink);background:rgba(255,45,120,.05);}
+.pt.b{border-color:rgba(167,139,250,.3);color:#a78bfa;background:rgba(167,139,250,.05);}
+.pc-metrics{display:flex;gap:1.4rem;}
+.m{font-size:.58rem;color:var(--muted);}.m span{color:var(--accent);font-weight:700;}
+footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2rem 3.5rem;display:flex;align-items:center;justify-content:space-between;background:var(--surface);}
+.fc{font-size:.58rem;color:var(--muted);letter-spacing:.1em;}.fc strong{color:var(--accent);}
+.fl{display:flex;gap:1.5rem;list-style:none;}
+.fl a{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.fl a:hover{color:var(--pink);}
+@media(max-width:900px){nav{padding:.9rem 1.5rem;}.nav-links li:not(:last-child){display:none;}.ph{padding:3rem 1.5rem 2rem;}.filter-bar{padding:1.4rem 1.5rem;}.pg{margin:2rem 1.5rem 2.5rem;grid-template-columns:1fr;}footer{flex-direction:column;gap:1rem;text-align:center;padding:1.8rem 1.5rem;}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div><div class="blob b1"></div><div class="blob b2"></div>
+<nav>
+  <a href="index.html" class="nav-logo">Tali<span>Code</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="portafolio.html" class="active">Portafolio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="productos.html">Productos</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <button class="tt" onclick="toggleTheme()"><span id="ti">🌙</span><div class="tt-track"><div class="tt-thumb"></div></div><span id="tl">Dark</span></button>
+</nav>
+<div class="pw">
+  <div class="ph">
+    <div class="bc"><a href="index.html">Inicio</a><span class="bc-sep">/</span><span class="bc-c">Portafolio</span></div>
+    <h1 class="page-title">Proyectos<br><span class="acc">reales.</span></h1>
+  </div>
+  <div class="filter-bar">
+    <button class="fb on">Todos</button>
+    <button class="fb">Frontend</button>
+    <button class="fb">Automatización</button>
+    <button class="fb">Data</button>
+    <button class="fb">QA</button>
+  </div>
+  <div class="pg">
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(135deg,#0d1a14,#1a2e20)"><div class="pc-bar" style="background:linear-gradient(to right,var(--accent),#a78bfa)"></div><span class="pc-bi">🌐</span></div>
+      <div class="pc-body"><div class="pc-num">01 / Frontend</div><div class="pc-name">Web Educativa Accesible</div><div class="pc-desc">Moodle y PHP simulando flujo CMS. WCAG 2.1 completo. Navegación por teclado y ARIA implementados.</div><div class="pc-stack"><span class="pt g">Moodle</span><span class="pt g">PHP</span><span class="pt b">WCAG 2.1</span><span class="pt">ARIA</span></div><div class="pc-metrics"><div class="m">Accesibilidad <span>100%</span></div><div class="m">Lighthouse <span>>90</span></div></div></div>
+    </div>
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(135deg,#0d1020,#1a1535)"><div class="pc-bar" style="background:linear-gradient(to right,var(--pink),#a78bfa)"></div><span class="pc-bi">⚛️</span></div>
+      <div class="pc-body"><div class="pc-num">02 / Frontend</div><div class="pc-name">Landing Page con React</div><div class="pc-desc">Formulario dinámico, lightbox, diseño responsivo. Tiempo de carga optimizado bajo 2 segundos.</div><div class="pc-stack"><span class="pt b">React</span><span class="pt g">CSS3</span><span class="pt">JS</span><span class="pt g">Lighthouse</span></div><div class="pc-metrics"><div class="m">Carga <span>&lt;2s</span></div><div class="m">Performance <span>>90</span></div></div></div>
+    </div>
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(135deg,#0d1520,#152030)"><div class="pc-bar" style="background:linear-gradient(to right,#60a5fa,#a78bfa)"></div><span class="pc-bi">📊</span></div>
+      <div class="pc-body"><div class="pc-num">03 / Data</div><div class="pc-name">Dashboard Power BI Educativo</div><div class="pc-desc">KPIs de aprendizaje para institución con +200 alumnos. Reportes interactivos para decisiones pedagógicas.</div><div class="pc-stack"><span class="pt g">Power BI</span><span class="pt b">SQL</span><span class="pt">Excel</span></div><div class="pc-metrics"><div class="m">Alumnos <span>+200</span></div><div class="m">Reportes <span>Real-time</span></div></div></div>
+    </div>
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(135deg,#1a0d10,#2e1520)"><div class="pc-bar" style="background:linear-gradient(to right,var(--pink),var(--accent))"></div><span class="pc-bi">🔍</span></div>
+      <div class="pc-body"><div class="pc-num">04 / QA</div><div class="pc-name">Auditoría QA Web</div><div class="pc-desc">Revisión y corrección de entregables HTML/CSS/JS. Reporte estructurado. Postman para validación de APIs.</div><div class="pc-stack"><span class="pt p">QA Funcional</span><span class="pt p">Postman</span><span class="pt">HTML/CSS</span></div><div class="pc-metrics"><div class="m">Defectos reducidos <span>~40%</span></div></div></div>
+    </div>
+    <div class="pc">
+      <div class="pc-thumb" style="background:linear-gradient(135deg,#0a1a14,#0d2018)"><div class="pc-bar" style="background:linear-gradient(to right,var(--accent),var(--pink))"></div><span class="pc-bi">🤖</span></div>
+      <div class="pc-body"><div class="pc-num">05 / Automatización</div><div class="pc-name">Flujo CRM con Go High Level</div><div class="pc-desc">Automatización de seguimiento de leads, emails y recordatorios. Publicación de contenido 50% más rápida.</div><div class="pc-stack"><span class="pt g">Go High Level</span><span class="pt b">N8N</span><span class="pt g">CRM</span></div><div class="pc-metrics"><div class="m">Eficiencia <span>+50%</span></div></div></div>
+    </div>
+    <div class="pc" style="background:rgba(168,255,62,.02);border:1px dashed rgba(168,255,62,.12);">
+      <div class="pc-thumb" style="background:transparent;border-bottom:1px dashed rgba(168,255,62,.1)"><span style="font-size:2.5rem;opacity:.2">+</span></div>
+      <div class="pc-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:160px;gap:.8rem">
+        <div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)">Próximamente</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem">Más proyectos</div>
+        <div style="font-size:.65rem;color:var(--muted)">Portafolio actualizado continuamente.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="fc">© 2025 <strong>TaliCode</strong> · Talia A. Rodrigues</div>
+  <ul class="fl"><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="contacto.html">Contacto</a></li></ul>
+</footer>
+<script>
+let isDark=true;
+function toggleTheme(){isDark=!isDark;document.body.classList.toggle('light',!isDark);document.getElementById('ti').textContent=isDark?'🌙':'☀️';document.getElementById('tl').textContent=isDark?'Dark':'Light';}
+document.querySelectorAll('.fb').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.fb').forEach(x=>x.classList.remove('on'));b.classList.add('on');}));
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.06});
+document.querySelectorAll('.pc').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .5s,transform .5s';obs.observe(el);});
+</script>
+</body>
+</html>

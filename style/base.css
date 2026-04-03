@@ -1,0 +1,18 @@
+:root{
+  --bg:#0B0F14;
+  --surface:#121821;
+  --surface2:#0F1722;
+  --primary:#5B8CFF;
+  --secondary:#8B5CF6;
+  --accent:#F59E0B;
+  --text:#E5E7EB;
+  --muted:#94A3B8;
+  --border:#1E293B;
+}
+
+body{
+  margin:0;
+  font-family:'Space Mono', monospace;
+  background:var(--bg);
+  color:var(--text);
+}

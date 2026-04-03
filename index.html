@@ -1,162 +1,90 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>TaliCode</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Space+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./style/style.css">
-
+<title>TaliCode | Automatizacion y Desarrollo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style/main.css">
 </head>
-
 <body>
-
-<!-- BACKGROUND -->
 <div class="grid-bg"></div>
-<div class="cursor-glow"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+<div id="site-navbar"></div>
 
-<!-- HERO -->
-<div class="container" style="position:relative;">
+<header class="container reveal">
+  <section class="hero">
 
-<div class="hero-glow"></div>
+  <div class="hero-grid">
 
-<h1 class="reveal">
-Hola, soy 
-<span style="
-background:linear-gradient(135deg,#5B8CFF,#8B5CF6);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;">
-Tali
-</span>
-</h1>
+    <!-- TEXTO -->
+    <div>
+      <h1>
+        Hola, soy <span class="grad">Talia Rodrigues</span>
+      </h1>
 
-<p class="reveal">
-Arquitecta de sistemas digitales que automatizan negocios reales  
-y convierten visitas en clientes.
-</p>
+      <p>
+        Arquitecta de Sistemas Digitales. Automatizo negocios con CRM, funnels y procesos inteligentes.
+      </p>
 
-<br>
+      <div class="hero-cta">
+        <a href="pages/contacto.html" class="btn-primary">Agendar consulta</a>
+        <a href="pages/servicios.html" class="btn-outline">Ver servicios</a>
+      </div>
+    </div>
 
-<a href="servicios.html" class="btn-primary reveal">
-Ver mis servicios
-</a>
+    <!-- AVATAR -->
+    <div class="hero-avatar">
+      <img src="assets/images/avatar.png" alt="Talia">
+    </div>
 
-<a href="contacto.html" class="btn-outline reveal">
-Agendar diagnóstico
-</a>
+  </div>
 
-</div>
+</section>
+</header>
+<div id="tech-banner"></div>
 
-<!-- CASOS REALES -->
-<div class="container">
+<main class="container">
+  <section class="reveal">
+    <h2>Servicios destacados</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Implementacion GoHighLevel</h3>
+        <p>Configuracion de pipelines, automatizaciones, formularios y seguimiento comercial.</p>
+      </article>
+      <article class="card">
+        <h3>Automatizacion de procesos</h3>
+        <p>Integraciones con Make, Zapier y APIs para reducir trabajo manual y errores.</p>
+      </article>
+      <article class="card">
+        <h3>Dashboards y reportes</h3>
+        <p>Tableros para medir conversiones, ventas y operaciones en tiempo real.</p>
+      </article>
+      <article class="card">
+        <h3>Landing pages</h3>
+        <p>Paginas optimizadas para captar leads y aumentar conversiones.</p>
+      </article>
+    </div>
+  </section>
 
-<h2 class="reveal">Resultados reales</h2>
+  <section class="reveal" style="margin-top:3rem;">
+    <h2>Accesos rapidos</h2>
+    <div class="grid">
+      <a class="card" href="pages/servicios.html" style="text-decoration:none;color:inherit;">
+        <h3>Servicios</h3>
+        <p>Conoce planes, alcance y formas de trabajo.</p>
+      </a>
+      <a class="card" href="pages/contacto.html" style="text-decoration:none;color:inherit;">
+        <h3>Contacto</h3>
+        <p>Escribe por WhatsApp o email y coordinamos una llamada.</p>
+      </a>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
 
-<div class="grid">
-
-<div class="card reveal">Inmobiliaria → +12 consultas en 7 días</div>
-<div class="card reveal">Estética → agenda llena en 2 semanas</div>
-<div class="card reveal">Coach → ventas automáticas</div>
-<div class="card reveal">Clínica → reservas automatizadas</div>
-
-</div>
-
-</div>
-
-<!-- SERVICIOS -->
-<div class="container">
-
-<h2 class="reveal">Cómo funciona</h2>
-
-<div class="grid">
-
-<div class="card reveal">
-<h3>Captación</h3>
-<p>Landing + formularios + entrada de leads</p>
-</div>
-
-<div class="card reveal">
-<h3>Automatización</h3>
-<p>WhatsApp + emails + seguimiento automático</p>
-</div>
-
-<div class="card reveal">
-<h3>Conversión</h3>
-<p>Pipeline + cierres + organización</p>
-</div>
-
-<div class="card reveal">
-<h3>Escalabilidad</h3>
-<p>Sistemas que crecen con tu negocio</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- PRODUCTOS -->
-<div class="container">
-
-<h2 class="reveal">Productos</h2>
-
-<div class="grid">
-
-<div class="card reveal">
-<h3>Ebook — $17</h3>
-<a href="producto-ebook.html" class="btn-primary">Ver</a>
-</div>
-
-<div class="card reveal">
-<h3>Pack Automatización — $27</h3>
-<a href="producto-pack.html" class="btn-primary">Ver</a>
-</div>
-
-<div class="card reveal">
-<h3>Bootcamp GHL — $197</h3>
-<a href="producto-bootcamp.html" class="btn-primary">Ver</a>
-</div>
-
-<div class="card reveal">
-<h3>Implementación CRM — $600+</h3>
-<a href="servicio-implementacion.html" class="btn-outline">
-Trabajar conmigo
-</a>
-</div>
-
-</div>
-
-</div>
-
-<!-- JS -->
-<script>
-
-/* ANIMACIÓN SCROLL */
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-},{
-  threshold:0.15
-});
-
-document.querySelectorAll('.reveal').forEach(el=>{
-  observer.observe(el);
-});
-
-/* CURSOR GLOW */
-const glow = document.querySelector('.cursor-glow');
-
-document.addEventListener('mousemove', (e)=>{
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
-});
-
-</script>
-
+<script type="module" src="./js/app.js"></script>
 </body>
 </html>

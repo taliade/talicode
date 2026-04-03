@@ -1,36 +1,74 @@
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
+import { initReveal } from './reveal.js';
+import { initCursor } from './cursor.js';
+import { initBanner } from './banner.js';
+
+function getBasePrefix() {
+  return window.location.pathname.includes('/pages/') ? '../' : './';
+}
+
+function getCurrentPage() {
+  const cleanPath = window.location.pathname.replace(/\\/g, '/');
+
+  if (cleanPath.endsWith('/pages/servicios.html')) return 'servicios';
+  if (cleanPath.endsWith('/pages/contacto.html')) return 'contacto';
+  return 'inicio';
+}
+
+async function loadComponent(id, path) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  try {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    el.innerHTML = await res.text();
+  } catch (err) {
+    console.error(`No se pudo cargar ${path}:`, err);
+  }
+}
+
+function wireSharedLinks(basePrefix) {
+  const routeMap = {
+    inicio: `${basePrefix}index.html`,
+    servicios: `${basePrefix}pages/servicios.html`,
+    contacto: `${basePrefix}pages/contacto.html`
+  };
+
+  document.querySelectorAll('[data-nav]').forEach((link) => {
+    const key = link.getAttribute('data-nav');
+    if (!key || !routeMap[key]) return;
+
+    link.setAttribute('href', routeMap[key]);
+  });
+}
+
+function markActiveLink() {
+  const currentPage = getCurrentPage();
+
+  document.querySelectorAll('.navbar-links [data-nav]').forEach((link) => {
+    if (link.getAttribute('data-nav') === currentPage) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
   });
-},{
-  threshold:0.15
-});
+}
 
-document.querySelectorAll('.reveal').forEach(el=>{
-  observer.observe(el);
-});
+async function initApp() {
+  const basePrefix = getBasePrefix();
+  const componentsPrefix = `${basePrefix}components`;
 
-const glow = document.querySelector('.cursor-glow');
+  await Promise.all([
+    loadComponent('site-navbar', `${componentsPrefix}/navbar.html`),
+    loadComponent('tech-banner', `${componentsPrefix}/tech-banner.html`),
+    loadComponent('site-footer', `${componentsPrefix}/footer.html`)
+  ]);
 
-document.addEventListener('mousemove', (e)=>{
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
-});
+  wireSharedLinks(basePrefix);
+  markActiveLink();
+  initReveal();
+  initCursor();
+  initBanner();
+}
 
-
-document.querySelectorAll('.btn-primary, .btn-outline').forEach(btn=>{
-  btn.addEventListener('mousemove', e=>{
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width/2;
-    const y = e.clientY - rect.top - rect.height/2;
-
-    btn.style.transform = `translate(${x*0.1}px, ${y*0.1}px)`;
-  });
-
-  btn.addEventListener('mouseleave', ()=>{
-    btn.style.transform = `translate(0,0)`;
-  });
-});
+initApp();

@@ -1,310 +1,58 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Servicios — TaliCode</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios | TaliCode</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0c0c10;--surface:#131318;--surface2:#1c1c24;--accent:#a8ff3e;--pink:#ff2d78;--pink2:#ff7eb3;--text:#f0f0f5;--muted:#72728a;--border:rgba(255,255,255,0.06);--nav-bg:rgba(12,12,16,0.93);--grid-c:rgba(168,255,62,0.025);}
-body.light{--bg:#fafaf7;--surface:#fff;--surface2:#f0f0ea;--accent:#5c9900;--pink:#d4005a;--pink2:#e8527e;--text:#0c0c10;--muted:#7a7a8e;--border:rgba(0,0,0,0.08);--nav-bg:rgba(250,250,247,0.94);--grid-c:rgba(92,153,0,0.035);}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;transition:background-color .4s,color .4s,border-color .4s;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Space Mono',monospace;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:998;opacity:.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
-.grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(var(--grid-c) 1px,transparent 1px),linear-gradient(90deg,var(--grid-c) 1px,transparent 1px);background-size:44px 44px;}
-/* blobs */
-.blob{position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;animation:drift 12s ease-in-out infinite;}
-.b1{width:450px;height:450px;background:rgba(168,255,62,.07);top:-120px;right:-80px;}
-.b2{width:380px;height:380px;background:rgba(255,45,120,.07);bottom:-80px;left:-60px;animation-delay:-5s;}
-@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,18px)}}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3.5rem;background:var(--nav-bg);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-.02em;color:var(--text);text-decoration:none;}.nav-logo span{color:var(--accent);}
-.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center;}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;transition:color .2s;position:relative;}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--pink);transition:width .3s;}
-.nav-links a:hover{color:var(--text);}.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
-.nav-links a.active{color:var(--accent);}
-.tt{display:flex;align-items:center;gap:.5rem;cursor:pointer;background:none;border:1px solid var(--border);padding:.38rem .9rem;color:var(--muted);font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;}
-.tt:hover{border-color:var(--accent);color:var(--accent);}
-.tt-track{width:30px;height:16px;border-radius:8px;background:var(--border);position:relative;}
-body.light .tt-track{background:var(--accent);}
-.tt-thumb{position:absolute;top:2px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--muted);transition:transform .3s,background .3s!important;}
-body.light .tt-thumb{transform:translateX(14px);background:#fff;}
-
-.page-wrap{position:relative;z-index:1;padding-top:72px;}
-.page-header{padding:4rem 3.5rem 3rem;border-bottom:1px solid var(--border);}
-.bc{display:flex;align-items:center;gap:.7rem;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
-.bc a{color:var(--muted);text-decoration:none;}.bc a:hover{color:var(--accent);}
-.bc-sep{color:var(--pink);opacity:.6;}.bc-cur{color:var(--accent);}
-.page-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.04em;line-height:.92;}
-.page-title .acc{color:var(--accent);}.page-title .pk{color:var(--pink);}
-
-/* NICHO BANNER */
-.nicho{margin:2.5rem 3.5rem 0;padding:2rem 2.5rem;
-  border:1px solid rgba(168,255,62,.2);background:rgba(168,255,62,.03);
-  position:relative;overflow:hidden;}
-.nicho::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(to right,var(--accent),var(--pink));}
-.nicho-label{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
-.nicho-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:.6rem;}
-.nicho-desc{font-size:.7rem;color:var(--muted);line-height:1.8;max-width:620px;}
-
-/* SERVICE LIST */
-.svc-list{margin:2.5rem 3.5rem;border:1px solid var(--border);}
-.svc-row{display:grid;grid-template-columns:56px 1fr auto;align-items:start;gap:2rem;
-  padding:2rem 2.5rem;border-bottom:1px solid var(--border);transition:background .2s;}
-.svc-row:last-child{border-bottom:none;}
-.svc-row:hover{background:var(--surface2);}
-.svc-num{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-family:'Syne',sans-serif;font-weight:700;padding-top:.2rem;}
-.svc-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.4rem;}
-.svc-desc{font-size:.68rem;color:var(--muted);line-height:1.8;max-width:500px;}
-.svc-tags{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.7rem;}
-.stag{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:.16rem .5rem;border:1px solid var(--border);color:var(--muted);}
-.stag.g{border-color:rgba(168,255,62,.3);color:var(--accent);background:rgba(168,255,62,.05);}
-.stag.p{border-color:rgba(255,45,120,.3);color:var(--pink);background:rgba(255,45,120,.05);}
-.stag.b{border-color:rgba(167,139,250,.3);color:#a78bfa;background:rgba(167,139,250,.05);}
-.sbadge{font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;padding:.26rem .7rem;border:1px solid;white-space:nowrap;align-self:start;margin-top:.18rem;border-radius:2px;}
-.badge-g{border-color:var(--accent);color:var(--accent);}
-.badge-p{border-color:var(--pink);color:var(--pink);}
-.badge-b{border-color:#a78bfa;color:#a78bfa;}
-
-/* ══ PRICING SECTION ══ */
-.pricing-section{padding:5rem 3.5rem;}
-.sl{font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
-.st{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.7rem,3vw,2.8rem);letter-spacing:-.03em;line-height:1.05;margin-bottom:1rem;}
-.sdiv{width:48px;height:2px;background:linear-gradient(to right,var(--accent),var(--pink));margin-bottom:3rem;}
-
-.pricing-note{font-size:.72rem;color:var(--muted);line-height:1.9;max-width:560px;margin-bottom:3rem;
-  padding:1.4rem 1.8rem;border-left:3px solid var(--accent);background:rgba(168,255,62,.04);}
-.pricing-note strong{color:var(--text);}
-
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;
-  background:var(--border);border:1px solid var(--border);}
-.price-card{background:var(--surface);padding:2.4rem;display:flex;flex-direction:column;gap:1.2rem;
-  position:relative;overflow:hidden;transition:background .3s;}
-.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
-.price-card:hover{background:var(--surface2);}
-.price-card.featured{background:var(--surface2);}
-.price-card.featured::after{content:'POPULAR';position:absolute;top:1.2rem;right:1.2rem;
-  font-size:.5rem;letter-spacing:.2em;padding:.2rem .6rem;background:var(--pink);color:#fff;font-weight:700;}
-.pc-icon{font-size:1.8rem;}
-.pc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;}
-.pc-price{font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;line-height:1;}
-.pc-price small{font-size:.65rem;font-weight:400;color:var(--muted);font-family:'Space Mono',monospace;}
-.pc-desc{font-size:.68rem;color:var(--muted);line-height:1.8;}
-.pc-features{display:flex;flex-direction:column;gap:.55rem;margin:0;}
-.feat{display:flex;align-items:flex-start;gap:.6rem;font-size:.64rem;color:var(--muted);line-height:1.6;}
-.feat::before{content:'✓';font-size:.68rem;flex-shrink:0;margin-top:.05rem;}
-.feat.g::before{color:var(--accent);}
-.feat.p::before{color:var(--pink);}
-.feat.b::before{color:#a78bfa;}
-.pc-cta{margin-top:auto;padding-top:1.4rem;border-top:1px solid var(--border);}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.78rem 1.6rem;
-  font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;
-  text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all .25s;border-radius:2px;width:100%;}
-.btn-primary{background:var(--accent);color:#000;font-weight:700;}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(168,255,62,.35);}
-.btn-pink{background:var(--pink);color:#fff;font-weight:700;}
-.btn-pink:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(255,45,120,.35);}
-.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
-
-/* CTA strip */
-.cta-strip{margin:0 3.5rem 3.5rem;padding:2.8rem;border:1px solid var(--border);background:var(--surface);
-  display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden;}
-.cta-strip::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--accent),var(--pink));}
-.cta-text h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:.5rem;}
-.cta-text p{font-size:.7rem;color:var(--muted);line-height:1.8;}
-.cta-btns{display:flex;gap:.8rem;flex-wrap:wrap;}
-
-footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:2rem 3.5rem;display:flex;align-items:center;justify-content:space-between;background:var(--surface);}
-.fc{font-size:.58rem;color:var(--muted);letter-spacing:.1em;}.fc strong{color:var(--accent);}
-.fl{display:flex;gap:1.5rem;list-style:none;}
-.fl a{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-.fl a:hover{color:var(--pink);}
-@media(max-width:900px){nav{padding:.9rem 1.5rem;}.nav-links li:not(:last-child){display:none;}.page-header,.nicho,.svc-list,.cta-strip{margin-left:1.5rem;margin-right:1.5rem;}.page-header{padding:3rem 1.5rem 2rem;}.pricing-section{padding:3.5rem 1.5rem;}.svc-row{grid-template-columns:1fr;gap:.4rem;}.svc-num{display:none;}footer{flex-direction:column;gap:1rem;text-align:center;padding:1.8rem 1.5rem;}}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style/main.css">
 </head>
 <body>
 <div class="grid-bg"></div>
-<div class="blob b1"></div><div class="blob b2"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+<div id="site-navbar"></div>
+<div id="tech-banner"></div>
+<section class="container">
 
-<nav>
-  <a href="index.html" class="nav-logo">Tali<span>Code</span></a>
-  <ul class="nav-links">
-    <li><a href="index.html#skills">Skills</a></li>
-    <li><a href="portafolio.html">Portafolio</a></li>
-    <li><a href="servicios.html" class="active">Servicios</a></li>
-    <li><a href="productos.html">Productos</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-  <button class="tt" onclick="toggleTheme()"><span id="ti">🌙</span><div class="tt-track"><div class="tt-thumb"></div></div><span id="tl">Dark</span></button>
-</nav>
+<h1>Productos y servicios</h1>
 
-<div class="page-wrap">
-  <div class="page-header">
-    <div class="bc"><a href="index.html">Inicio</a><span class="bc-sep">/</span><span class="bc-cur">Servicios</span></div>
-    <h1 class="page-title">Servicios para<br><span class="acc">pequeñas</span> <span class="pk">empresas.</span></h1>
-  </div>
+<div class="grid">
 
-  <div class="nicho">
-    <div class="nicho-label">// Mi especialidad</div>
-    <div class="nicho-title">Pequeñas empresas que quieren digitalizarse y funcionar en automático</div>
-    <div class="nicho-desc">Ayudo a negocios a lanzar su presencia digital y automatizar sus procesos para que ahorren tiempo, atraigan más clientes y puedan escalar sin depender de nadie técnico.</div>
-  </div>
-
-  <div class="svc-list">
-    <div class="svc-row">
-      <div class="svc-num">01</div>
-      <div><div class="svc-title">🚀 Lanzamiento Digital</div><div class="svc-desc">De cero a online. Web responsiva y accesible (WCAG 2.1), integrada con formularios, CRM y captación. Lighthouse &gt;90 garantizado.</div><div class="svc-tags"><span class="stag g">React / HTML5</span><span class="stag g">WCAG 2.1</span><span class="stag b">GHL</span></div></div>
-      <span class="sbadge badge-g">Fullstack</span>
-    </div>
-    <div class="svc-row">
-      <div class="svc-num">02</div>
-      <div><div class="svc-title">🤖 Automatización de Negocio</div><div class="svc-desc">Flujos automáticos de leads, emails y reportes con N8N y GHL. Tu negocio trabaja aunque vos no estés.</div><div class="svc-tags"><span class="stag g">Go High Level</span><span class="stag g">N8N</span><span class="stag b">CRM</span></div></div>
-      <span class="sbadge badge-g">Automatización</span>
-    </div>
-    <div class="svc-row">
-      <div class="svc-num">03</div>
-      <div><div class="svc-title">📊 Dashboard & Análisis de Datos</div><div class="svc-desc">Dashboards Power BI interactivos, reportes con SQL y Python. KPIs que te dicen exactamente qué hacer.</div><div class="svc-tags"><span class="stag g">Power BI</span><span class="stag b">Python</span><span class="stag b">SQL</span></div></div>
-      <span class="sbadge badge-b">Data</span>
-    </div>
-    <div class="svc-row">
-      <div class="svc-num">04</div>
-      <div><div class="svc-title">🔧 Arduino & IoT</div><div class="svc-desc">Programación de microcontroladores y sensores con C# y Python. De prototipo a producción.</div><div class="svc-tags"><span class="stag b">C#</span><span class="stag g">Python</span><span class="stag">Arduino</span></div></div>
-      <span class="sbadge badge-b">Hardware</span>
-    </div>
-    <div class="svc-row">
-      <div class="svc-num">05</div>
-      <div><div class="svc-title">🎯 Auditoría UX, Accesibilidad & QA</div><div class="svc-desc">WCAG 2.1 completo, testing funcional con Postman y casos de prueba. Defectos críticos reducidos ~40%.</div><div class="svc-tags"><span class="stag p">QA Funcional</span><span class="stag p">Postman</span><span class="stag g">WCAG 2.1</span></div></div>
-      <span class="sbadge badge-p">QA</span>
-    </div>
-    <div class="svc-row">
-      <div class="svc-num">06</div>
-      <div><div class="svc-title">💡 Consultoría de Inicio Digital</div><div class="svc-desc">Roadmap para lanzar o escalar tu negocio digital. Qué herramientas usar, cómo organizarte, cómo automatizar.</div><div class="svc-tags"><span class="stag g">Estrategia</span><span class="stag p">Negocios</span><span class="stag b">GHL</span></div></div>
-      <span class="sbadge badge-p">Consultoría</span>
-    </div>
-    <div class="svc-row">
-      <div class="svc-num">07</div>
-      <div><div class="svc-title">🎬 Contenido Digital & Video</div><div class="svc-desc">Edición de reels y tutoriales con CapCut. Estrategia de contenido para posicionar tu marca y atraer clientes.</div><div class="svc-tags"><span class="stag p">CapCut</span><span class="stag p">Reels</span><span class="stag">Estrategia</span></div></div>
-      <span class="sbadge badge-p">Contenido</span>
-    </div>
-    <div class="svc-row">
-      <div class="svc-num">08</div>
-      <div><div class="svc-title">📚 Docencia & Mentoring Tech</div><div class="svc-desc">Clases y talleres en HTML, CSS, JS, Git, QA y automatización. 3 años formando devs en Gobierno CABA y UTN.</div><div class="svc-tags"><span class="stag b">HTML/CSS/JS</span><span class="stag b">Git</span><span class="stag p">QA</span></div></div>
-      <span class="sbadge badge-b">Educación</span>
-    </div>
-  </div>
-
-  <!-- ══ PRECIOS ══ -->
-  <div class="pricing-section">
-    <div class="sl">// Inversión</div>
-    <h2 class="st">Paquetes &amp;<br>Cotización</h2>
-    <div class="sdiv"></div>
-
-    <div class="pricing-note">
-      <strong>Todos los precios son por cotización personalizada.</strong><br>
-      Cada proyecto es único. Estos paquetes son una guía orientativa — el precio final depende del alcance, tiempo y complejidad. <strong>Escribime y te armo una propuesta en menos de 24 hs.</strong>
-    </div>
-
-    <div class="pricing-grid">
-
-      <!-- STARTER -->
-      <div class="price-card" style="--c:var(--accent)">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)"></div>
-        <span class="pc-icon">🌱</span>
-        <div class="pc-name">Starter Digital</div>
-        <div class="pc-price">Desde <small>/ a cotizar</small></div>
-        <div class="pc-desc">Ideal para negocios que recién arrancan y necesitan presencia digital básica.</div>
-        <div class="pc-features">
-          <div class="feat g">Landing page responsiva y accesible</div>
-          <div class="feat g">Formulario de contacto integrado</div>
-          <div class="feat g">Optimización SEO básica</div>
-          <div class="feat g">Lighthouse &gt;90 garantizado</div>
-          <div class="feat g">1 ronda de revisiones</div>
-        </div>
-        <div class="pc-cta"><a href="contacto.html" class="btn btn-outline">Pedir cotización</a></div>
-      </div>
-
-      <!-- CRECIMIENTO — FEATURED -->
-      <div class="price-card featured">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--accent),var(--pink))"></div>
-        <span class="pc-icon">🚀</span>
-        <div class="pc-name">Crecimiento Digital</div>
-        <div class="pc-price">A medida <small>/ a cotizar</small></div>
-        <div class="pc-desc">Para negocios que quieren crecer con sistema completo y automatizaciones.</div>
-        <div class="pc-features">
-          <div class="feat g">Web completa (hasta 5 páginas)</div>
-          <div class="feat g">CRM con Go High Level</div>
-          <div class="feat p">Automatización de seguimiento de leads</div>
-          <div class="feat p">Dashboard básico de métricas</div>
-          <div class="feat g">WCAG 2.1 completo</div>
-          <div class="feat p">2 rondas de revisiones</div>
-        </div>
-        <div class="pc-cta"><a href="contacto.html" class="btn btn-pink">Pedir cotización</a></div>
-      </div>
-
-      <!-- PREMIUM -->
-      <div class="price-card">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--pink)"></div>
-        <span class="pc-icon">💎</span>
-        <div class="pc-name">Negocio en Piloto</div>
-        <div class="pc-price">Proyecto <small>/ a cotizar</small></div>
-        <div class="pc-desc">Solución completa para negocios que quieren automatizar todo y escalar.</div>
-        <div class="pc-features">
-          <div class="feat p">Todo del paquete anterior</div>
-          <div class="feat p">Flujos N8N avanzados</div>
-          <div class="feat p">Reportes automáticos semanales</div>
-          <div class="feat b">Dashboard Power BI personalizado</div>
-          <div class="feat b">Capacitación del equipo incluida</div>
-          <div class="feat p">Soporte post-entrega 30 días</div>
-        </div>
-        <div class="pc-cta"><a href="contacto.html" class="btn btn-primary">Pedir cotización</a></div>
-      </div>
-
-      <!-- DOCENCIA -->
-      <div class="price-card">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:#a78bfa"></div>
-        <span class="pc-icon">📚</span>
-        <div class="pc-name">Docencia & Mentoring</div>
-        <div class="pc-price">Por hora <small>/ a cotizar</small></div>
-        <div class="pc-desc">Clases y talleres personalizados para aprender a crear tu propio tech.</div>
-        <div class="pc-features">
-          <div class="feat b">HTML, CSS, JavaScript, React</div>
-          <div class="feat b">Git, GitHub y Scrum</div>
-          <div class="feat b">QA funcional y testing</div>
-          <div class="feat b">Automatización con GHL y N8N</div>
-          <div class="feat b">Material didáctico incluido</div>
-        </div>
-        <div class="pc-cta"><a href="contacto.html" class="btn btn-outline">Pedir cotización</a></div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="cta-strip">
-    <div class="cta-text">
-      <h3>¿Listo para arrancar?</h3>
-      <p>Contame tu proyecto y en menos de 24 hs te mando una propuesta personalizada.</p>
-    </div>
-    <div class="cta-btns">
-      <a href="contacto.html" class="btn btn-primary" style="width:auto">Contactame →</a>
-      <a href="portafolio.html" class="btn btn-outline" style="width:auto">Ver portafolio</a>
-    </div>
-  </div>
+<!-- EBOOK -->
+<div class="card">
+  <h3>📘 Sistema en 30 días con IA</h3>
+  <p>Aprendé a crear tu negocio digital automatizado.</p>
+  <a href="https://pay.hotmart.com/K105205954B" class="btn-primary">Comprar</a>
 </div>
 
-<footer>
-  <div class="fc">© 2025 <strong>TaliCode</strong> · Talia A. Rodrigues</div>
-  <ul class="fl"><li><a href="index.html">Inicio</a></li><li><a href="portafolio.html">Portafolio</a></li><li><a href="contacto.html">Contacto</a></li></ul>
-</footer>
-<script>
-let isDark=true;
-function toggleTheme(){isDark=!isDark;document.body.classList.toggle('light',!isDark);document.getElementById('ti').textContent=isDark?'🌙':'☀️';document.getElementById('tl').textContent=isDark?'Dark':'Light';}
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.06});
-document.querySelectorAll('.price-card,.svc-row').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);});
-</script>
+<!-- PACK -->
+<div class="card">
+  <h3>⚙️ Pack Automatizaciones</h3>
+  <p>Workflows listos para usar en GHL.</p>
+  <a href="TU_LINK_PACK" class="btn-primary">Comprar</a>
+</div>
+
+<!-- BOOTCAMP -->
+<div class="card">
+  <h3>🚀 Bootcamp GHL</h3>
+  <p>Formación completa con soporte.</p>
+  <a href="TU_LINK_BOOTCAMP" class="btn-primary">Entrar</a>
+</div>
+
+<!-- IMPLEMENTACIÓN -->
+<div class="card">
+  <h3>💼 Implementación personalizada</h3>
+  <p>CRM + automatización lista para tu negocio.</p>
+  <a href="contacto.html" class="btn-outline">Consultar</a>
+</div>
+
+</div>
+
+</section>
+<div id="site-footer"></div>
+
+<script type="module" src="../js/app.js"></script>
 </body>
 </html>

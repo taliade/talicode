@@ -3,88 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TaliCode | Automatizacion y Desarrollo</title>
+
+<title>TaliCode | Automatización y Desarrollo</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="./style/main.css">
 </head>
+
 <body>
+
+<!-- BACKGROUND -->
 <div class="grid-bg"></div>
 <div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
 <div id="site-navbar"></div>
 
+<!-- HERO -->
 <header class="container reveal">
+
   <section class="hero">
 
-  <div class="hero-grid">
+    <div class="hero-grid">
 
-    <!-- TEXTO -->
-    <div>
-      <h1>
-        Hola, soy <span class="grad">Talia Rodrigues</span>
-      </h1>
+      <!-- TEXTO -->
+      <div>
+        <h1>
+          Hola, soy <span class="grad">Talia Rodrigues</span>
+        </h1>
 
-      <p>
-        Arquitecta de Sistemas Digitales. Automatizo negocios con CRM, funnels y procesos inteligentes.
-      </p>
+        <p>
+          Arquitecta de Sistemas Digitales.<br>
+          Ayudo a negocios a automatizar ventas, captar clientes y escalar sin esfuerzo manual.
+        </p>
 
-      <div class="hero-cta">
-        <a href="pages/contacto.html" class="btn-primary">Agendar consulta</a>
-        <a href="pages/servicios.html" class="btn-outline">Ver servicios</a>
+        <div class="hero-cta">
+          <a href="./pages/contacto.html" class="btn-primary">Agendar diagnóstico</a>
+          <a href="./pages/servicios.html" class="btn-outline">Ver servicios</a>
+        </div>
       </div>
+
+      <!-- AVATAR -->
+      <div class="hero-avatar">
+        <img src="./assets/images/avatar.png" alt="Talia Rodrigues">
+      </div>
+
     </div>
 
-    <!-- AVATAR -->
-    <div class="hero-avatar">
-      <img src="assets/images/avatar.png" alt="Talia">
-    </div>
+  </section>
 
-  </div>
-
-</section>
 </header>
+
+<!-- TECH BANNER -->
 <div id="tech-banner"></div>
 
+<!-- MAIN -->
 <main class="container">
+
+  <!-- SERVICIOS -->
   <section class="reveal">
     <h2>Servicios destacados</h2>
+
     <div class="grid">
+
       <article class="card">
-        <h3>Implementacion GoHighLevel</h3>
-        <p>Configuracion de pipelines, automatizaciones, formularios y seguimiento comercial.</p>
+        <h3>Implementación GoHighLevel</h3>
+        <p>CRM, pipelines, automatizaciones y seguimiento comercial completo.</p>
       </article>
+
       <article class="card">
-        <h3>Automatizacion de procesos</h3>
-        <p>Integraciones con Make, Zapier y APIs para reducir trabajo manual y errores.</p>
+        <h3>Automatización de procesos</h3>
+        <p>Integraciones con Make, Zapier y APIs para eliminar tareas manuales.</p>
       </article>
+
       <article class="card">
         <h3>Dashboards y reportes</h3>
-        <p>Tableros para medir conversiones, ventas y operaciones en tiempo real.</p>
+        <p>Visualización de datos para tomar decisiones inteligentes.</p>
       </article>
+
       <article class="card">
         <h3>Landing pages</h3>
-        <p>Paginas optimizadas para captar leads y aumentar conversiones.</p>
+        <p>Páginas optimizadas para captar leads y convertir en clientes.</p>
       </article>
+
     </div>
   </section>
 
-  <section class="reveal" style="margin-top:3rem;">
-    <h2>Accesos rapidos</h2>
+
+  <!-- CASOS REALES -->
+  <section class="reveal cases">
+
+    <h2>Resultados reales</h2>
+
     <div class="grid">
-      <a class="card" href="pages/servicios.html" style="text-decoration:none;color:inherit;">
-        <h3>Servicios</h3>
-        <p>Conoce planes, alcance y formas de trabajo.</p>
-      </a>
-      <a class="card" href="pages/contacto.html" style="text-decoration:none;color:inherit;">
-        <h3>Contacto</h3>
-        <p>Escribe por WhatsApp o email y coordinamos una llamada.</p>
-      </a>
+
+      <div class="case-card">
+        <h3>Inmobiliaria</h3>
+        <p>+12 consultas en 7 días</p>
+        <small>CRM + WhatsApp + funnel automatizado</small>
+      </div>
+
+      <div class="case-card">
+        <h3>Estética</h3>
+        <p>Agenda llena en 2 semanas</p>
+        <small>Recordatorios + automatización de reservas</small>
+      </div>
+
+      <div class="case-card">
+        <h3>Curso digital</h3>
+        <p>Ventas automáticas con Hotmart</p>
+        <small>Landing + upsell + seguimiento</small>
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- PROCESO -->
+  <section class="reveal process">
+
+    <h2>Cómo funciona</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <strong>1. Diagnóstico</strong>
+        <p>Analizo tu negocio y detecto oportunidades de automatización.</p>
+      </div>
+
+      <div class="card">
+        <strong>2. Implementación</strong>
+        <p>Creo el sistema con CRM, funnels y automatizaciones.</p>
+      </div>
+
+      <div class="card">
+        <strong>3. Escalado</strong>
+        <p>Tu negocio empieza a generar clientes automáticamente.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ACCESOS -->
+  <section class="reveal" style="margin-top:3rem;">
+
+    <h2>Accesos rápidos</h2>
+
+    <div class="grid">
+
+      <a class="card" href="./pages/servicios.html" style="text-decoration:none;color:inherit;">
+        <h3>Servicios</h3>
+        <p>Planes, productos y soluciones listas para usar.</p>
+      </a>
+
+      <a class="card" href="./pages/contacto.html" style="text-decoration:none;color:inherit;">
+        <h3>Contacto</h3>
+        <p>WhatsApp, email o agendá una llamada.</p>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA FINAL -->
+  <section class="reveal cta-final">
+
+    <h2>¿Querés automatizar tu negocio?</h2>
+
+    <p>
+      Te ayudo a construir un sistema que trabaje por vos 24/7.
+    </p>
+
+    <a href="./pages/contacto.html" class="btn-primary">
+      Agendar diagnóstico gratis
+    </a>
+
+  </section>
+
 </main>
+
+<!-- FOOTER -->
 <div id="site-footer"></div>
 
 <script type="module" src="./js/app.js"></script>
+
 </body>
 </html>

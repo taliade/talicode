@@ -6,6 +6,15 @@ function getBasePrefix() {
   return window.location.pathname.includes('/pages/') ? '../' : './';
 }
 
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+if(hamburger){
+  hamburger.addEventListener('click', ()=>{
+    navLinks.classList.toggle('active');
+  });
+}
 function getCurrentPage() {
   const cleanPath = window.location.pathname.replace(/\\/g, '/');
 
@@ -72,3 +81,23 @@ async function initApp() {
 }
 
 initApp();
+function loadComponent(id, path){
+  fetch(path)
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById(id).innerHTML = data;
+    });
+}
+
+loadComponent("navbar","./components/navbar.html");
+loadComponent("footer","./components/footer.html");
+
+document.querySelectorAll('[data-nav]').forEach(link=>{
+  link.addEventListener('click',()=>{
+    const page = link.getAttribute('data-nav');
+
+    if(page === "inicio") window.location.href = "/";
+    if(page === "servicios") window.location.href = "/pages/servicios.html";
+    if(page === "contacto") window.location.href = "/pages/contacto.html";
+  });
+});

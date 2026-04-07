@@ -1,8 +1,71 @@
 @import url('./base.css');
 @import url('./components.css');
 @import url('./animations.css');
-.site-footer{
-  border-top:1px solid var(--border);
-  padding-top:2rem;
-  margin-top:4rem;
+
+
+/* NAVBAR FIX */
+.navbar-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1100px;
+  margin:auto;
+  padding:1rem 2rem;
+}
+
+/* BRAND */
+.navbar-brand{
+  display:flex;
+  flex-direction:column;
+}
+
+/* HAMBURGER FIX */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:6px;
+  cursor:pointer;
+  padding:10px;
+}
+
+.hamburger span{
+  width:26px;
+  height:2px;
+  background:white;
+  display:block;
+  transition:.3s;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .navbar-links.desktop{
+    display:none;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+}
+
+.hamburger span{
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+}
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
 }

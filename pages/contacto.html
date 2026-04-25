@@ -1,46 +1,329 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto | TaliCode</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | TALIDECODE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/contacto.css">
 </head>
 <body>
-<div class="grid-bg"></div>
-<div class="cursor-glow" aria-hidden="true"></div>
-<div id="site-navbar"></div>
-<div id="tech-banner"></div>
-<section class="container">
 
-<h1>Contacto</h1>
+    <!-- ========= HEADER ========= -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <span class="logo-dot"></span>
+                <h2>talidecode</h2>
+            </a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html">Inicio</a>
+            <div class="has-submenu">
+                <button class="submenu-btn" onclick="toggleSubmenu(event)">
+                    <a href="servicios.html" class="submenu-main-link">Servicios</a>
+                    <span class="arrow" id="arrow">▼</span>
+                </button>
+                <div class="submenu" id="submenu">
+                    <a href="ebook.html">📘 Ebook</a>
+                    <a href="producto-bootcamp.html">⚙️ Taller GHL</a>
+                    <a href="servicio-implementacion.html">🚀 Funnels</a>
+                </div>
+            </div>
+            <a href="portafolio.html">Portafolio</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </header>
 
-<p>Consultá tu proyecto:</p>
+    <!-- ========= HERO BLOOM STYLE ========= -->
+    <section class="contacto-hero">
+        <div class="hero-bloom-card">
 
-<div class="contact-box">
-  <p>📧 hola@talicode.com</p>
-  <p>📱 WhatsApp: +54 9 11 5795-6919</p>
-</div>
+            <!-- LADO IZQUIERDO: Texto -->
+            <div class="bloom-left">
+                <span class="retro-tag">
+                    <span class="tag-dot"></span> Hablemos · Respuesta en 24 hs
+                </span>
+                <h1 class="retro-title">¿Charlamos?<br><span class="gradient-word">Te leo.</span></h1>
+                <p class="bloom-desc">
+                    Contame qué necesitás y te armo una propuesta a medida. 
+                    Sin humo, sin venta agresiva. Solo claridad y soluciones reales.
+                </p>
 
-<a href="https://wa.me/5491157956919" class="btn-primary">
-  Escribirme por WhatsApp
-</a>
+                <!-- Canales rápidos -->
+                <div class="quick-contacts">
+                    <a href="https://wa.me/5491100000000" target="_blank" class="quick-item quick-wa">
+                        <div class="quick-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="quick-info">
+                            <span class="quick-label">WhatsApp directo</span>
+                            <span class="quick-value">+54 9 11 0000-0000</span>
+                        </div>
+                        <i class="fas fa-arrow-right quick-arrow"></i>
+                    </a>
+                    <a href="mailto:hola@talidecode.com" class="quick-item quick-mail">
+                        <div class="quick-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="quick-info">
+                            <span class="quick-label">Escribime un email</span>
+                            <span class="quick-value">hola@talidecode.com</span>
+                        </div>
+                        <i class="fas fa-arrow-right quick-arrow"></i>
+                    </a>
+                    <a href="#agenda" class="quick-item quick-cal">
+                        <div class="quick-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="quick-info">
+                            <span class="quick-label">Agendar llamada</span>
+                            <span class="quick-value">15 min · Gratis</span>
+                        </div>
+                        <i class="fas fa-arrow-right quick-arrow"></i>
+                    </a>
+                </div>
+            </div>
 
-<!-- FORMULARIO GHL -->
-<div class="form-ghl">
-  <iframe 
-    src="TU_LINK_GHL_FORM"
-    width="100%"
-    height="600"
-    frameborder="0">
-  </iframe>
-</div>
+            <!-- LADO DERECHO: Escena plastilina -->
+            <div class="bloom-right">
+                <div class="bloom-scene">
+                    <!-- Nubes -->
+                    <div class="sky-cloud cloud-1"></div>
+                    <div class="sky-cloud cloud-2"></div>
 
-</section>
-<div id="site-footer"></div>
-<script type="module" src="../js/app.js"></script>
+                    <!-- Colinas -->
+                    <div class="hill hill-back"></div>
+                    <div class="hill hill-front"></div>
+
+                    <!-- Sobre de email volando -->
+                    <div class="envelope-scene">
+                        <div class="envelope">
+                            <div class="envelope-flap"></div>
+                            <div class="envelope-body"></div>
+                            <div class="envelope-heart">💌</div>
+                        </div>
+                        <div class="trail t1"></div>
+                        <div class="trail t2"></div>
+                        <div class="trail t3"></div>
+                    </div>
+
+                    <!-- Burbuja chat -->
+                    <div class="chat-bubble bubble-1">
+                        <span>💬</span>
+                    </div>
+                    <div class="chat-bubble bubble-2">
+                        <span>✨</span>
+                    </div>
+
+                    <!-- Sparkles -->
+                    <div class="sparkle sp1">✨</div>
+                    <div class="sparkle sp2">⭐</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= FORMULARIO GHL EMBED ========= -->
+    <section class="form-section" id="formulario">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Contame tu <span class="italic-em">proyecto</span></h2>
+            <p>Completá el formulario y te respondo con una propuesta personalizada.</p>
+        </div>
+
+        <div class="form-container">
+            <!-- Decoraciones -->
+            <div class="form-deco deco-1">🎯</div>
+            <div class="form-deco deco-2">💡</div>
+
+            <!-- IFRAME GHL -->
+            <div class="form-wrap">
+                <iframe
+                    src="https://api.publiexpert.com/widget/form/baqSv8Zpo3iGUfWYcEH3"
+                    id="inline-baqSv8Zpo3iGUfWYcEH3"
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Tali-code-contacto"
+                    data-height="740"
+                    data-layout-iframe-id="inline-baqSv8Zpo3iGUfWYcEH3"
+                    data-form-id="baqSv8Zpo3iGUfWYcEH3"
+                    title="Tali-code-contacto"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+    <script src="https://api.publiexpert.com/js/form_embed.js"></script>
+
+    <!-- ========= AGENDA CALENDLY ========= -->
+    <section class="agenda-section" id="agenda">
+        <div class="agenda-card">
+            <div class="agenda-left">
+                <span class="mini-tag"><span class="dot-live"></span> Agenda abierta</span>
+                <h2 class="retro-title-small">Agendá una <span class="italic-em">llamada gratis</span></h2>
+                <p>
+                    15 minutos para que me cuentes tu negocio y veamos juntas qué solución te conviene. 
+                    Sin compromiso, sin venta.
+                </p>
+
+                <ul class="agenda-list">
+                    <li><i class="fas fa-circle-check"></i> 15 minutos de llamada por Zoom</li>
+                    <li><i class="fas fa-circle-check"></i> Diagnóstico rápido de tu caso</li>
+                    <li><i class="fas fa-circle-check"></i> Recomendación concreta</li>
+                    <li><i class="fas fa-circle-check"></i> 100% gratis · sin compromiso</li>
+                </ul>
+
+                <!-- Opción: botón que abre Calendly en popup -->
+                <a href="https://calendly.com/tu-calendly-link/diagnostico" target="_blank" class="btn-retro btn-primary-retro">
+                    Elegí tu horario <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="agenda-right">
+                <!-- AQUÍ VA EL EMBED DE CALENDLY (opcional) -->
+                <!-- Descomentá si querés embeber Calendly directamente -->
+                <!--
+                <div class="calendly-inline-widget" 
+                     data-url="https://calendly.com/tu-calendly-link/diagnostico?embed_domain=tusitio.com&embed_type=Inline" 
+                     style="min-width:320px;height:500px;">
+                </div>
+                <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                -->
+
+                <!-- Mockup visual mientras no hay embed -->
+                <div class="calendar-mockup">
+                    <div class="cal-header">
+                        <span class="cal-dot"></span>
+                        <span class="cal-dot"></span>
+                        <span class="cal-dot"></span>
+                        <span class="cal-title">Agosto 2024</span>
+                    </div>
+                    <div class="cal-grid">
+                        <div class="cal-day">L</div>
+                        <div class="cal-day">M</div>
+                        <div class="cal-day">M</div>
+                        <div class="cal-day">J</div>
+                        <div class="cal-day">V</div>
+                        <div class="cal-day muted">S</div>
+                        <div class="cal-day muted">D</div>
+
+                        <div class="cal-num">5</div>
+                        <div class="cal-num available">6</div>
+                        <div class="cal-num">7</div>
+                        <div class="cal-num available selected">8</div>
+                        <div class="cal-num available">9</div>
+                        <div class="cal-num muted">10</div>
+                        <div class="cal-num muted">11</div>
+
+                        <div class="cal-num">12</div>
+                        <div class="cal-num available">13</div>
+                        <div class="cal-num available">14</div>
+                        <div class="cal-num">15</div>
+                        <div class="cal-num available">16</div>
+                        <div class="cal-num muted">17</div>
+                        <div class="cal-num muted">18</div>
+                    </div>
+                    <div class="cal-times">
+                        <span class="cal-slot">09:00</span>
+                        <span class="cal-slot active">11:30</span>
+                        <span class="cal-slot">14:00</span>
+                        <span class="cal-slot">16:30</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= REDES SOCIALES ========= -->
+    <section class="social-section">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Encontrame en <span class="italic-em">redes</span></h2>
+            <p>Contenido semanal sobre automatización, funnels y sistemas que venden.</p>
+        </div>
+
+        <div class="social-grid">
+            <a href="https://instagram.com/talidecode" target="_blank" class="social-card social-ig">
+                <div class="social-icon"><i class="fab fa-instagram"></i></div>
+                <div class="social-text">
+                    <h4>Instagram</h4>
+                    <p>@talidecode</p>
+                </div>
+                <span class="social-followers">+5k seguidores</span>
+            </a>
+            <a href="https://linkedin.com/in/talidecode" target="_blank" class="social-card social-ln">
+                <div class="social-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div class="social-text">
+                    <h4>LinkedIn</h4>
+                    <p>Tali · GHL Expert</p>
+                </div>
+                <span class="social-followers">+2k conexiones</span>
+            </a>
+            <a href="https://youtube.com/@talidecode" target="_blank" class="social-card social-yt">
+                <div class="social-icon"><i class="fab fa-youtube"></i></div>
+                <div class="social-text">
+                    <h4>YouTube</h4>
+                    <p>Tutoriales GHL</p>
+                </div>
+                <span class="social-followers">+1k subs</span>
+            </a>
+            <a href="https://tiktok.com/@talidecode" target="_blank" class="social-card social-tt">
+                <div class="social-icon"><i class="fab fa-tiktok"></i></div>
+                <div class="social-text">
+                    <h4>TikTok</h4>
+                    <p>@talidecode</p>
+                </div>
+                <span class="social-followers">Contenido corto</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ========= FAQ ========= -->
+    <section class="faq">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Preguntas <span class="italic-em">rápidas</span></h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>¿Cuánto tardás en responder?</summary>
+                <p>Generalmente respondo en menos de 24 hs hábiles. Si es urgente, escribime por WhatsApp.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Das presupuesto por WhatsApp?</summary>
+                <p>Prefiero agendar una llamada de 15 min para entender bien tu caso. Así te armo una propuesta real, no un precio al aire.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Trabajás con clientes de otros países?</summary>
+                <p>Sí, trabajo con clientes de toda LATAM y España. Cobro en USD por transferencia, Wise, Stripe o MercadoPago.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Cuál es el ticket mínimo para trabajar con vos?</summary>
+                <p>Los proyectos de funnels arrancan en $497 USD. Si tu presupuesto es menor, te recomiendo el Ebook o el Taller.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- ========= CTA FINAL ========= -->
+    <section class="cta-final">
+        <h2>Todo gran sistema<br><em>empieza con una conversación.</em></h2>
+        <p class="cta-sub">Te leo, te escucho y te propongo la mejor solución.</p>
+        <a href="#formulario" class="btn btn-dark btn-xl">
+            Completar formulario <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 TALIDECODE — Hecho con ❤️ + código</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>

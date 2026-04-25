@@ -1,199 +1,212 @@
-﻿<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>TaliCode | Automatización y Desarrollo</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="./style/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALIDECODE | Arquitecta Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style/styles.css">
 </head>
-
 <body>
 
-<!-- BACKGROUND -->
-<div class="grid-bg"></div>
-<div class="cursor-glow" aria-hidden="true"></div>
+    <!-- ========= HEADER ========= -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-dot"></span>
+                <h2>talidecode</h2>
+            </a>
 
-<!-- NAVBAR -->
-<div id="site-navbar"></div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </div>
+                        </div>
+                        <div class="has-submenu">
+                       <button class="submenu-btn" onclick="toggleSubmenu(event)">
+                    <a href="./pages/servicios.html" class="submenu-main-link">Servicios</a>
+                    <span class="arrow" id="arrow">▼</span>
+                </button>
+                <div class="submenu" id="submenu">
+                    <a href="./pages/ebook.html">📘 Ebook</a>
+                    <a href="./pages/servicio-implementacion.html">⚙️ Taller GHL</a>
+                    <a href="./pages/producto-bootcamp.html">🚀 Funnels</a>
+                </div>
+            </div>
+        </nav>
 
-<!-- HERO -->
-<header class="container reveal">
-
-  <section class="hero">
-
-    <div class="hero-grid">
-
-      <!-- TEXTO -->
-      <div>
-        <h1>
-          Hola, soy <span class="grad">Talia Rodrigues</span>
-        </h1>
-
-        <p>
-          Arquitecta de Sistemas Digitales.<br>
-          Ayudo a negocios a automatizar ventas, captar clientes y escalar sin esfuerzo manual.
-        </p>
-
-        <div class="hero-cta">
-          <a href="./pages/contacto.html" class="btn-primary">Agendar diagnóstico</a>
-          <a href="./pages/servicios.html" class="btn-outline">Ver servicios</a>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html">Inicio</a>
+            <div class="has-submenu">
+                <button class="submenu-btn" onclick="toggleSubmenu(event)">
+                    Servicios <span class="arrow" id="arrow">▼</span>
+                </button>
+                <div class="submenu" id="submenu">
+                    <a href="./pages/ebook.html">📘 Ebook</a>
+                    <a href="./pages/servicio-implementacion.html">⚙️ Taller GHL</a>
+                    <a href="./pages/producto-bootcamp.html">🚀 Funnels</a>
+                </div>
+            </div>
+            <a href="./pages/portafolio.html">Portafolio</a>
+            <a href="./pages/contacto.html">Contacto</a>
+            <a href="https://www.skool.com/vertice-b2b-1871">Comunidad</a>
         </div>
-      </div>
+    </header>
 
-      <!-- AVATAR -->
-      <div class="hero-avatar">
-        <img src="./assets/images/avatar.png" alt="Talia Rodrigues">
-      </div>
+    <!-- ========= HERO GRID ASIMÉTRICO ========= -->
+    <section class="hero-grid">
 
-    </div>
+        <!-- CARD AVATAR + INFO -->
+        <div class="card card-avatar">
+            <div class="avatar-wrap">
+                <img src="./assets/images/avatar.png" alt="Tali" class="avatar-img">
+                <span class="status-dot"></span>
+            </div>
+            <h3>Tali</h3>
+            <p class="role">Arquitecta Digital · GHL Expert</p>
+            <div class="socials">
+                <a href="https://www.instagram.com/tali_code/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/talia-rodrigues-20/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
 
-  </section>
+        <!-- CARD HERO PRINCIPAL -->
+        <div class="card card-hero">
+            <span class="mini-tag">✨ Sistemas que venden 24/7</span>
+            <h1>Construyo sistemas <br><span class="highlight">que venden por vos.</span></h1>
+            <p>Automatización, funnels y CRM para que dejes de perseguir clientes y empieces a escalar.</p>
+            <div class="hero-ctas">
+                <a href="./pages/servicios.html" class="btn btn-dark">
+                    Ver servicios <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="./pages/contacto.html" class="btn btn-light">
+                    Agendar diagnóstico
+                </a>
+            </div>
+        </div>
 
-</header>
+        <!-- CARD STATS/RESULTADO -->
+        <div class="card card-stat">
+            <div class="stat-number">+12</div>
+            <p>leads en 7 días</p>
+            <div class="stat-line"></div>
+            <small>Caso real · Cliente agencia</small>
+        </div>
 
-<!-- TECH BANNER -->
-<div id="tech-banner"></div>
+        <!-- CARD CTA CIRCULAR -->
+        <div class="card card-cta">
+            <div class="circle-cta">
+                <span>SCROLL</span>
+                <span>EXPLORÁ</span>
+                <span>SCROLL</span>
+                <span>EXPLORÁ</span>
+            </div>
+            <i class="fas fa-arrow-down arrow-down"></i>
+        </div>
 
-<!-- MAIN -->
-<main class="container">
+    </section>
 
-  <!-- SERVICIOS -->
-  <section class="reveal">
-    <h2>Servicios destacados</h2>
+    <!-- ========= SERVICIOS QUICK GRID ========= -->
+    <section class="services-quick">
+        <div class="section-head">
+            <span class="section-tag">01 — Servicios</span>
+            <h2>Qué construyo <em>para vos</em></h2>
+        </div>
 
-    <div class="grid">
+        <div class="quick-grid">
+            <a href="./pages/servicios.html" class="quick-card q1">
+                <div class="q-icon">🧠</div>
+                <h3>CRM con GHL</h3>
+                <p>Gestión inteligente de leads.</p>
+                <span class="q-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+            </a>
+            <a href="./pages/servicios.html" class="quick-card q2">
+                <div class="q-icon">⚡</div>
+                <h3>Automatización</h3>
+                <p>Flujos que corren solos.</p>
+                <span class="q-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+            </a>
+            <a href="./pages/producto-bootcamp.html" class="quick-card q3">
+                <div class="q-icon">🚀</div>
+                <h3>Funnels</h3>
+                <p>Embudos que convierten.</p>
+                <span class="q-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+            </a>
+            <a href="./pages/servicios.html" class="quick-card q4">
+                <div class="q-icon">📊</div>
+                <h3>Dashboards</h3>
+                <p>Tus números en vivo.</p>
+                <span class="q-arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+            </a>
+        </div>
+    </section>
 
-      <article class="card">
-        <h3>Implementación GoHighLevel</h3>
-        <p>CRM, pipelines, automatizaciones y seguimiento comercial completo.</p>
-      </article>
+    <!-- ========= PROCESO ========= -->
+    <section class="process">
+        <div class="section-head">
+            <span class="section-tag">02 — Cómo trabajamos</span>
+            <h2>3 pasos, <em>0 humo</em></h2>
+        </div>
 
-      <article class="card">
-        <h3>Automatización de procesos</h3>
-        <p>Integraciones con Make, Zapier y APIs para eliminar tareas manuales.</p>
-      </article>
+        <div class="steps">
+            <div class="step">
+                <span class="step-num">01</span>
+                <h3>Diagnóstico</h3>
+                <p>Analizo tu negocio y encuentro oportunidades reales de automatización.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <h3>Sistema</h3>
+                <p>Construyo tu máquina de ventas: CRM, funnels, follow-ups.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <h3>Escalado</h3>
+                <p>Optimizamos datos y escalamos resultados mes a mes.</p>
+            </div>
+        </div>
+    </section>
 
-      <article class="card">
-        <h3>Dashboards y reportes</h3>
-        <p>Visualización de datos para tomar decisiones inteligentes.</p>
-      </article>
+    <!-- ========= CTA FINAL ========= -->
+    <section class="cta-final">
+        <h2>Dejá de depender de tu tiempo <br><em>para vender.</em></h2>
+        <a href="https://api.publiexpert.com/widget/form/baqSv8Zpo3iGUfWYcEH3" class="btn btn-dark btn-xl">
+            Empezar ahora <i class="fas fa-arrow-right"></i>
+        </a>
+        <p class="marca-frase">"No vendo páginas. Construyo sistemas que generan clientes."</p>
+    </section>
+    <iframe
+    src="https://api.publiexpert.com/widget/form/baqSv8Zpo3iGUfWYcEH3"
+    style="width:100%;height:100%;border:none;border-radius:8px"
+    id="inline-baqSv8Zpo3iGUfWYcEH3" 
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Tali-code-contacto"
+    data-height="740"
+    data-layout-iframe-id="inline-baqSv8Zpo3iGUfWYcEH3"
+    data-form-id="baqSv8Zpo3iGUfWYcEH3"
+    title="Tali-code-contacto"
+        >
+</iframe>
+<script src="https://api.publiexpert.com/js/form_embed.js"></script>
 
-      <article class="card">
-        <h3>Landing pages</h3>
-        <p>Páginas optimizadas para captar leads y convertir en clientes.</p>
-      </article>
+    <!-- ========= FOOTER ========= -->
+    <footer class="footer">
+        <p>© 2026 TALIDECODE — Hecho con ❤️ + código</p>
+    </footer>
 
-    </div>
-  </section>
-
-
-  <!-- CASOS REALES -->
-  <section class="reveal cases">
-
-    <h2>Resultados reales</h2>
-
-    <div class="grid">
-
-      <div class="case-card">
-        <h3>Inmobiliaria</h3>
-        <p>+12 consultas en 7 días</p>
-        <small>CRM + WhatsApp + funnel automatizado</small>
-      </div>
-
-      <div class="case-card">
-        <h3>Estética</h3>
-        <p>Agenda llena en 2 semanas</p>
-        <small>Recordatorios + automatización de reservas</small>
-      </div>
-
-      <div class="case-card">
-        <h3>Curso digital</h3>
-        <p>Ventas automáticas con Hotmart</p>
-        <small>Landing + upsell + seguimiento</small>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PROCESO -->
-  <section class="reveal process">
-
-    <h2>Cómo funciona</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <strong>1. Diagnóstico</strong>
-        <p>Analizo tu negocio y detecto oportunidades de automatización.</p>
-      </div>
-
-      <div class="card">
-        <strong>2. Implementación</strong>
-        <p>Creo el sistema con CRM, funnels y automatizaciones.</p>
-      </div>
-
-      <div class="card">
-        <strong>3. Escalado</strong>
-        <p>Tu negocio empieza a generar clientes automáticamente.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ACCESOS -->
-  <section class="reveal" style="margin-top:3rem;">
-
-    <h2>Accesos rápidos</h2>
-
-    <div class="grid">
-
-      <a class="card" href="./pages/servicios.html" style="text-decoration:none;color:inherit;">
-        <h3>Servicios</h3>
-        <p>Planes, productos y soluciones listas para usar.</p>
-      </a>
-
-      <a class="card" href="./pages/contacto.html" style="text-decoration:none;color:inherit;">
-        <h3>Contacto</h3>
-        <p>WhatsApp, email o agendá una llamada.</p>
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- CTA FINAL -->
-  <section class="reveal cta-final">
-
-    <h2>¿Querés automatizar tu negocio?</h2>
-
-    <p>
-      Te ayudo a construir un sistema que trabaje por vos 24/7.
-    </p>
-
-    <a href="./pages/contacto.html" class="btn-primary">
-      Agendar diagnóstico gratis
-    </a>
-
-  </section>
-
-</main>
-
-<!-- FOOTER -->
-<div id="site-footer"></div>
-
-<script type="module" src="./js/app.js"></script>
-
+    <script src="./js/script.js"></script>
 </body>
 </html>

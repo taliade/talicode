@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad Vértice B2B | TALIDECODE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/comunidad.css">
+</head>
+<body>
+
+    <!-- ========= HEADER ========= -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <span class="logo-dot"></span>
+                <h2>talidecode</h2>
+            </a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html">Inicio</a>
+            <div class="has-submenu">
+                <button class="submenu-btn" onclick="toggleSubmenu(event)">
+                    <a href="servicios.html" class="submenu-main-link">Servicios</a>
+                    <span class="arrow" id="arrow">▼</span>
+                </button>
+                <div class="submenu" id="submenu">
+                    <a href="ebook.html">📘 Ebook</a>
+                    <a href="producto-bootcamp.html">⚙️ Taller GHL</a>
+                    <a href="servicio-implementacion.html">🚀 Funnels</a>
+                </div>
+            </div>
+            <a href="portafolio.html">Portafolio</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="comunidad.html" class="active">Comunidad</a>
+        </div>
+    </header>
+
+    <!-- ========= HERO BLOOM ========= -->
+    <section class="comunidad-hero">
+        <div class="hero-bloom-card">
+
+            <!-- LADO IZQUIERDO: Texto -->
+            <div class="bloom-left">
+                <span class="retro-tag">
+                    <span class="tag-dot"></span> Comunidad Vértice B2B · En Skool
+                </span>
+                <h1 class="retro-title">Uníte a una<br>comunidad que<br><span class="gradient-word">crece junta.</span></h1>
+                <p class="bloom-desc">
+                    Emprendedores, coaches y agencias que están automatizando sus negocios 
+                    con GoHighLevel. Recursos, clases en vivo, networking y soporte real.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="https://www.skool.com/vertice-b2b-1871" target="_blank" class="btn-retro btn-primary-retro">
+                        Unirme a la comunidad <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#beneficios" class="btn-retro btn-secondary-retro">
+                        Ver qué incluye
+                    </a>
+                </div>
+
+                <!-- Stats comunidad -->
+                <div class="comm-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">+150</span>
+                        <span class="stat-label">Miembros activos</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">+80</span>
+                        <span class="stat-label">Recursos</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">24/7</span>
+                        <span class="stat-label">Soporte</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LADO DERECHO: Escena Skool style -->
+            <div class="bloom-right">
+                <div class="bloom-scene">
+                    <!-- Nubes -->
+                    <div class="sky-cloud cloud-1"></div>
+                    <div class="sky-cloud cloud-2"></div>
+
+                    <!-- Colinas -->
+                    <div class="hill hill-back"></div>
+                    <div class="hill hill-front"></div>
+
+                    <!-- Personajes plastilina (miembros) -->
+                    <div class="members-scene">
+                        <div class="member-char m1">
+                            <div class="char-body"></div>
+                            <div class="char-head">👧</div>
+                        </div>
+                        <div class="member-char m2">
+                            <div class="char-body"></div>
+                            <div class="char-head">👨</div>
+                        </div>
+                        <div class="member-char m3">
+                            <div class="char-body"></div>
+                            <div class="char-head">👩</div>
+                        </div>
+                    </div>
+
+                    <!-- Logo Skool flotante -->
+                    <div class="skool-badge">
+                        <span class="skool-text">SKOOL</span>
+                        <span class="skool-subtitle">Vértice B2B</span>
+                    </div>
+
+                    <!-- Sparkles -->
+                    <div class="sparkle sp1">✨</div>
+                    <div class="sparkle sp2">⭐</div>
+                    <div class="sparkle sp3">💫</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= PICK YOUR RESOURCE (estilo Bloom) ========= -->
+    <section class="resources-section" id="beneficios">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Pick your <span class="italic-em">resource</span></h2>
+            <p>Todo lo que tenés adentro de Vértice B2B — educación real, sin relleno.</p>
+        </div>
+
+        <div class="resources-grid">
+
+            <!-- Recurso 1: Clases -->
+            <div class="resource-card card-blue">
+                <span class="res-tag">🎓 Clases</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-blue"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-play-circle"></i>
+                        <small>Clases en vivo</small>
+                    </div>
+                </div>
+                <h3>Clases semanales</h3>
+                <p>Lives de Q&A, tutoriales paso a paso y casos prácticos — todo grabado para ver cuando quieras.</p>
+                <div class="res-meta">
+                    <span><i class="fas fa-video"></i> +40 clases</span>
+                </div>
+            </div>
+
+            <!-- Recurso 2: Templates -->
+            <div class="resource-card card-peach">
+                <span class="res-tag">📦 Templates</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-peach"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-download"></i>
+                        <small>Plantillas pro</small>
+                    </div>
+                </div>
+                <h3>Templates premium</h3>
+                <p>Funnels, workflows de GHL, sheets y dashboards listos para importar y usar.</p>
+                <div class="res-meta">
+                    <span><i class="fas fa-box-open"></i> +30 plantillas</span>
+                </div>
+            </div>
+
+            <!-- Recurso 3: Networking -->
+            <div class="resource-card card-mint">
+                <span class="res-tag">🤝 Networking</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-mint"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-users"></i>
+                        <small>Networking</small>
+                    </div>
+                </div>
+                <h3>Comunidad activa</h3>
+                <p>Conectá con otros emprendedores, compartí wins, pedí feedback y encontrá partners.</p>
+                <div class="res-meta">
+                    <span><i class="fas fa-user-group"></i> +150 miembros</span>
+                </div>
+            </div>
+
+            <!-- Recurso 4: Soporte -->
+            <div class="resource-card card-lilac">
+                <span class="res-tag">💬 Soporte</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-lilac"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-comments"></i>
+                        <small>Soporte directo</small>
+                    </div>
+                </div>
+                <h3>Soporte directo</h3>
+                <p>Preguntá y recibí respuesta mía o de mentores senior. Sin tickets, sin esperas eternas.</p>
+                <div class="res-meta">
+                    <span><i class="fas fa-clock"></i> Respuesta en 24h</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= SKOOL SHOWCASE (existing style) ========= -->
+    <section class="skool-showcase">
+        <div class="showcase-grid">
+            <div class="showcase-text">
+                <span class="mini-tag"><span class="dot-live"></span> Hosted en Skool</span>
+                <h2 class="retro-title-small">Una plataforma <span class="italic-em">pensada para crecer.</span></h2>
+                <p>
+                    Todo centralizado: videos, recursos, chats y clases en vivo. 
+                    Una sola app, un solo login, cero caos.
+                </p>
+                <ul class="showcase-list">
+                    <li><i class="fas fa-circle-check"></i> App móvil + web</li>
+                    <li><i class="fas fa-circle-check"></i> Notificaciones inteligentes</li>
+                    <li><i class="fas fa-circle-check"></i> Gamificación con niveles</li>
+                    <li><i class="fas fa-circle-check"></i> Acceso desde cualquier dispositivo</li>
+                </ul>
+                <a href="https://www.skool.com/vertice-b2b-1871" target="_blank" class="btn-retro btn-primary-retro">
+                    Entrar a Skool <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+            <!-- Mockup Skool -->
+            <div class="showcase-image">
+                <div class="skool-mockup">
+                    <div class="skool-header">
+                        <div class="sk-dot"></div>
+                        <div class="sk-dot"></div>
+                        <div class="sk-dot"></div>
+                        <span class="sk-url">skool.com/vertice-b2b</span>
+                    </div>
+                    <div class="skool-content">
+                        <div class="sk-community">
+                            <div class="sk-logo">V</div>
+                            <div class="sk-info">
+                                <h4>Vértice B2B</h4>
+                                <p>Automatización · GHL · Funnels</p>
+                            </div>
+                        </div>
+                        <div class="sk-posts">
+                            <div class="sk-post">
+                                <div class="sk-avatar a1"></div>
+                                <div class="sk-post-content">
+                                    <strong>Ana M.</strong>
+                                    <span>🎉 Primer cliente con GHL!</span>
+                                </div>
+                            </div>
+                            <div class="sk-post">
+                                <div class="sk-avatar a2"></div>
+                                <div class="sk-post-content">
+                                    <strong>Lucas R.</strong>
+                                    <span>💡 Nuevo template subido</span>
+                                </div>
+                            </div>
+                            <div class="sk-post">
+                                <div class="sk-avatar a3"></div>
+                                <div class="sk-post-content">
+                                    <strong>Tali</strong>
+                                    <span>📺 Live hoy 19h</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sk-leaderboard">
+                            <h5>🏆 Top miembros</h5>
+                            <div class="sk-rank">
+                                <span class="rank-num">1</span>
+                                <div class="rank-avatar a1"></div>
+                                <span class="rank-name">Ana M.</span>
+                                <span class="rank-points">1,240 pts</span>
+                            </div>
+                            <div class="sk-rank">
+                                <span class="rank-num">2</span>
+                                <div class="rank-avatar a2"></div>
+                                <span class="rank-name">Lucas R.</span>
+                                <span class="rank-points">980 pts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= QUÉ VAS A ENCONTRAR ========= -->
+    <section class="features-section">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Lo que vas a <span class="italic-em">encontrar</span></h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="f-emoji">📚</div>
+                <h4>Biblioteca de clases</h4>
+                <p>+40 clases grabadas sobre GHL, funnels, ventas y automatización.</p>
+            </div>
+            <div class="feature-card">
+                <div class="f-emoji">🎯</div>
+                <h4>Masterminds mensuales</h4>
+                <p>Encuentros en vivo para resolver casos reales de miembros.</p>
+            </div>
+            <div class="feature-card">
+                <div class="f-emoji">🔥</div>
+                <h4>Challenges trimestrales</h4>
+                <p>Desafíos con premios para crecer en skills y networking.</p>
+            </div>
+            <div class="feature-card">
+                <div class="f-emoji">🎁</div>
+                <h4>Descuentos en servicios</h4>
+                <p>Miembros acceden a precios especiales en ebook, taller y funnels.</p>
+            </div>
+            <div class="feature-card">
+                <div class="f-emoji">👩‍💻</div>
+                <h4>Acceso a mentores</h4>
+                <p>Expertos del ecosistema GHL disponibles para consultas.</p>
+            </div>
+            <div class="feature-card">
+                <div class="f-emoji">🚀</div>
+                <h4>Oportunidades reales</h4>
+                <p>Colaboraciones, partnerships y clientes referidos entre miembros.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= TESTIMONIOS ========= -->
+    <section class="testimonials-section">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Qué dicen los <span class="italic-em">miembros</span></h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="test-stars">⭐⭐⭐⭐⭐</div>
+                <p>"Antes perdía horas configurando GHL. En 2 semanas en Vértice ya tenía mi CRM, funnels y WhatsApp integrado. Locura."</p>
+                <div class="test-author">
+                    <div class="test-avatar">AM</div>
+                    <div>
+                        <strong>Ana Morales</strong>
+                        <span>Coach de ventas</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card highlight-testimonial">
+                <div class="test-stars">⭐⭐⭐⭐⭐</div>
+                <p>"La comunidad cambió mi negocio. Encontré 2 partners y un cliente en el primer mes. Vale 10x lo que pagué."</p>
+                <div class="test-author">
+                    <div class="test-avatar">LR</div>
+                    <div>
+                        <strong>Lucas Rivera</strong>
+                        <span>Agencia digital</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="test-stars">⭐⭐⭐⭐⭐</div>
+                <p>"Las clases de Tali son oro puro. Sin vueltas, aplicables, con casos reales. Ya recomendé a 5 personas."</p>
+                <div class="test-author">
+                    <div class="test-avatar">SP</div>
+                    <div>
+                        <strong>Sofía Paz</strong>
+                        <span>Consultora fitness</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= PRICING COMUNIDAD ========= -->
+    <section class="pricing">
+        <div class="pricing-card">
+            <div class="pricing-badge">🌱 Cupos mensuales limitados</div>
+            <h3>Vértice B2B · Skool</h3>
+            <div class="price-row">
+                <span class="price-new">$20</span>
+                <span class="price-tag">USD / mes</span>
+            </div>
+            <p class="price-desc">Cancelás cuando quieras · Sin permanencia · Primera semana gratis</p>
+
+            <ul class="price-features">
+                <li><i class="fas fa-circle-check"></i> Biblioteca completa de clases (+40)</li>
+                <li><i class="fas fa-circle-check"></i> +30 templates premium descargables</li>
+                <li><i class="fas fa-circle-check"></i> Masterminds mensuales en vivo</li>
+                <li><i class="fas fa-circle-check"></i> Acceso a comunidad 24/7</li>
+                <li><i class="fas fa-circle-check"></i> Soporte directo (respuesta en 24h)</li>
+                <li><i class="fas fa-circle-check"></i> Networking con +150 miembros</li>
+                <li><i class="fas fa-circle-check"></i> Descuentos exclusivos en servicios</li>
+                <li><i class="fas fa-circle-check"></i> Challenges con premios</li>
+            </ul>
+
+            <a href="https://www.skool.com/vertice-b2b-1871" target="_blank" class="btn-retro btn-primary-retro btn-full">
+                Unirme HOY! <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <div class="trust-row">
+                <span><i class="fas fa-shield-halved"></i> Pago seguro en Skool</span>
+                <span><i class="fas fa-rotate-left"></i> Cancelás cuando quieras</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= FAQ ========= -->
+    <section class="faq">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Preguntas <span class="italic-em">frecuentes</span></h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>¿Qué es Skool?</summary>
+                <p>Skool es la plataforma donde vive Vértice B2B. Es una app todo-en-uno que mezcla clases, comunidad, chat y gamificación. Es la herramienta preferida de comunidades premium globales.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Es realmente gratis la primera semana?</summary>
+                <p>Sí. Los primeros 7 días son 100% gratis y sin tarjeta. Si no te gusta, simplemente no seguís. Si te gusta, empieza el cobro mensual de $27.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Tengo que tener GHL para unirme?</summary>
+                <p>No. Muchos miembros empiezan sin GHL y dentro de la comunidad aprenden a implementarlo. Hay contenido para todos los niveles.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Puedo cancelar cuando quiera?</summary>
+                <p>Sí, sin permanencia ni letra chica. Cancelás desde Skool en 2 clicks. No hay cargos ocultos.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Cómo funcionan las clases en vivo?</summary>
+                <p>Se hacen dentro de Skool, generalmente 1 vez por semana. Si no podés asistir, quedan grabadas en la biblioteca para que las veas cuando quieras.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- ========= CTA FINAL ========= -->
+    <section class="cta-final">
+        <h2>No crezcas sola.<br><em>Crecé con Vértice.</em></h2>
+        <p class="cta-sub"> emprendedores ya están automatizando. Hoy te toca a vos.</p>
+        <a href="https://www.skool.com/vertice-b2b-1871" target="_blank" class="btn btn-dark btn-xl">
+            Unirme gratis por 7 días <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 TALIDECODE — Hecho con ❤️ + código</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

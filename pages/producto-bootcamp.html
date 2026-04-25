@@ -1,45 +1,379 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Producto Bootcamp | TaliCode</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Sistema GHL | TALIDECODE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/bootcamp.css">
 </head>
 <body>
-<div class="grid-bg"></div>
-<div class="cursor-glow" aria-hidden="true"></div>
 
-<main class="container">
-  <section class="reveal">
-    <h1>Bootcamp de Automatizacion</h1>
-    <p>Programa practico para aprender a crear flujos utiles desde cero.</p>
-  </section>
+    <!-- ========= HEADER ========= -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <span class="logo-dot"></span>
+                <h2>talidecode</h2>
+            </a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html">Inicio</a>
+            <div class="has-submenu">
+                <button class="submenu-btn" onclick="toggleSubmenu(event)">
+                    <a href="servicios.html" class="submenu-main-link">Servicios</a>
+                    <span class="arrow" id="arrow">▼</span>
+                </button>
+                <div class="submenu" id="submenu">
+                    <a href="ebook.html">📘 Ebook</a>
+                    <a href="producto-bootcamp.html">⚙️ Taller GHL</a>
+                    <a href="servicio-implementacion.html">🚀 Funnels</a>
+                </div>
+            </div>
+            <a href="portafolio.html">Portafolio</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </header>
 
-  <section class="grid reveal" style="margin-top:2rem;">
-    <article class="card">
-      <h3>Contenido</h3>
-      <p>- Fundamentos de automatizacion</p>
-      <p>- CRM y embudos</p>
-      <p>- Integraciones con herramientas no-code</p>
-      <p>- Casos reales de implementacion</p>
-    </article>
+    <!-- ========= HERO BLOOM STYLE ========= -->
+    <section class="bootcamp-hero">
+        <div class="hero-bloom-card">
 
-    <article class="card">
-      <h3>Ideal para</h3>
-      <p>Freelancers, emprendedores y equipos que quieren optimizar su operacion.</p>
-      <a class="btn-primary" href="contacto.html">Quiero mas info</a>
-    </article>
-  </section>
+            <!-- LADO IZQUIERDO: Texto -->
+            <div class="bloom-left">
+                <span class="retro-tag">
+                    <span class="tag-dot"></span> Retro · re-learned
+                </span>
+                <h1 class="retro-title">Dominá<br>GoHighLevel<br><span class="gradient-word">sin morir</span><br>en el intento</h1>
+                <p class="bloom-desc">
+                    Un taller intensivo para construir tu propio CRM, automatizaciones y funnels 
+                    sin depender de nadie. Testeado, guiado, y listo para implementar.
+                </p>
 
-  <p class="reveal" style="margin-top:2rem;">
-    <a class="btn-outline" href="../index.html">Volver al inicio</a>
-  </p>
-</main>
+                <div class="hero-ctas">
+                    <a href="#inscripcion" class="btn-retro btn-primary-retro">
+                        Inscribirme ahora <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#programa" class="btn-retro btn-secondary-retro">
+                        Ver programa
+                    </a>
+                </div>
 
-<script type="module" src="../js/app.js"></script>
+                <div class="hero-chips">
+                    <span class="chip"><i class="fas fa-check"></i> 30 días de soporte</span>
+                    <span class="chip"><i class="fas fa-bolt"></i> Acceso de por vida</span>
+                    <span class="chip"><i class="fas fa-users"></i> Comunidad privada</span>
+                </div>
+            </div>
+
+            <!-- LADO DERECHO: Escena plastilina estilo Mario -->
+            <div class="bloom-right">
+                <div class="bloom-scene">
+                    <!-- Cielo con nubes -->
+                    <div class="sky-cloud cloud-1"></div>
+                    <div class="sky-cloud cloud-2"></div>
+
+                    <!-- Colinas verdes -->
+                    <div class="hill hill-back"></div>
+                    <div class="hill hill-front"></div>
+
+                    <!-- Tubo estilo Mario -->
+                    <div class="pipe">
+                        <div class="pipe-top"></div>
+                        <div class="pipe-body"></div>
+                    </div>
+
+                    <!-- Flor -->
+                    <div class="flower">
+                        <div class="flower-stem"></div>
+                        <div class="flower-leaf"></div>
+                        <div class="flower-head"></div>
+                    </div>
+
+                    <!-- Sparkles -->
+                    <div class="sparkle sp1">✨</div>
+                    <div class="sparkle sp2">⭐</div>
+                    <div class="sparkle sp3">✨</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= PICK YOUR MODULE ========= -->
+    <section class="modules" id="programa">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Pick your <span class="italic-em">module</span></h2>
+            <p>Todo el programa del bootcamp — 4 módulos, cero relleno.</p>
+        </div>
+
+        <div class="modules-grid">
+
+            <!-- MÓDULO 1 -->
+            <div class="module-card card-blue">
+                <span class="module-tag">🎮 Módulo 1</span>
+                <!-- ESPACIO MOCKUP MÓDULO 1 -->
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-blue"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-image"></i>
+                        <small>Mockup Mód. 1</small>
+                    </div>
+                </div>
+                <h3>Setup del CRM</h3>
+                <p>Configuración inicial, pipelines, tags y gestión de leads.</p>
+                <div class="module-meta">
+                    <span><i class="fas fa-clock"></i> 3 hs</span>
+                    <span><i class="fas fa-video"></i> 6 lecciones</span>
+                </div>
+            </div>
+
+            <!-- MÓDULO 2 -->
+            <div class="module-card card-peach">
+                <span class="module-tag">🎮 Módulo 2</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-peach"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-image"></i>
+                        <small>Mockup Mód. 2</small>
+                    </div>
+                </div>
+                <h3>Automatizaciones</h3>
+                <p>Workflows, triggers, condiciones y flujos inteligentes.</p>
+                <div class="module-meta">
+                    <span><i class="fas fa-clock"></i> 4 hs</span>
+                    <span><i class="fas fa-video"></i> 8 lecciones</span>
+                </div>
+            </div>
+
+            <!-- MÓDULO 3 -->
+            <div class="module-card card-yellow">
+                <span class="module-tag">🎮 Módulo 3</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-yellow"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-image"></i>
+                        <small>Mockup Mód. 3</small>
+                    </div>
+                </div>
+                <h3>WhatsApp + Email API</h3>
+                <p>Integraciones reales, templates y seguimiento automático.</p>
+                <div class="module-meta">
+                    <span><i class="fas fa-clock"></i> 3 hs</span>
+                    <span><i class="fas fa-video"></i> 7 lecciones</span>
+                </div>
+            </div>
+
+            <!-- MÓDULO 4 -->
+            <div class="module-card card-mint">
+                <span class="module-tag">🎮 Módulo 4</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-mint"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-image"></i>
+                        <small>Mockup Mód. 4</small>
+                    </div>
+                </div>
+                <h3>Dashboards + Escalado</h3>
+                <p>Reportes, métricas clave y cómo escalar con datos reales.</p>
+                <div class="module-meta">
+                    <span><i class="fas fa-clock"></i> 2 hs</span>
+                    <span><i class="fas fa-video"></i> 5 lecciones</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= DASHBOARD SHOWCASE (estilo Bloom) ========= -->
+    <section class="dashboard-showcase">
+        <div class="showcase-grid">
+            <div class="showcase-text">
+                <span class="mini-tag"><span class="dot-live"></span> En vivo</span>
+                <h2 class="retro-title-small">¿Ya tenés un <span class="italic-em">sistema existente?</span></h2>
+                <p>
+                    No importa desde dónde partís. El taller te enseña a integrar GoHighLevel 
+                    a lo que ya tenés funcionando, sin romper nada.
+                </p>
+                <ul class="showcase-list">
+                    <li><i class="fas fa-circle-check"></i> Integración con tu web actual</li>
+                    <li><i class="fas fa-circle-check"></i> Migración de CRM anterior</li>
+                    <li><i class="fas fa-circle-check"></i> Conexión con Hotmart / Stripe</li>
+                    <li><i class="fas fa-circle-check"></i> Sincronización con Google Calendar</li>
+                </ul>
+                <a href="#inscripcion" class="btn-retro btn-primary-retro">
+                    Sumarme al taller <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <!-- ESPACIO MOCKUP DASHBOARD -->
+            <div class="showcase-image">
+                <div class="mockup-retro mockup-big">
+                    <div class="bars-bg bars-mint"></div>
+                    <div class="placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Mockup Dashboard GHL</p>
+                        <small>Subí tu imagen acá<br>(../assets/images/dashboard-ghl.png)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= LO QUE VAS A LOGRAR ========= -->
+    <section class="achievements">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Lo que vas a <span class="italic-em">lograr</span></h2>
+        </div>
+
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="a-emoji">🎯</div>
+                <h4>Tu propio CRM funcionando</h4>
+                <p>Configurado, con pipelines reales y leads cargados.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="a-emoji">⚡</div>
+                <h4>Automatizaciones activas</h4>
+                <p>Workflows que corren solos mientras dormís.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="a-emoji">📲</div>
+                <h4>WhatsApp integrado</h4>
+                <p>Respondiendo leads automáticamente con API oficial.</p>
+            </div>
+            <div class="achievement-card">
+                <div class="a-emoji">📊</div>
+                <h4>Dashboards en vivo</h4>
+                <p>Métricas que te muestran qué funciona y qué no.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= BONOS ========= -->
+    <section class="bonus-section">
+        <div class="bonus-card">
+            <div class="bonus-header">
+                <span class="bonus-badge">🎁 BONUS EXCLUSIVOS</span>
+                <h2 class="retro-title-small">Además te llevás...</h2>
+            </div>
+            <div class="bonus-items">
+                <div class="bonus-item">
+                    <span class="bonus-icon">📦</span>
+                    <div>
+                        <h4>Plantilla de CRM completa</h4>
+                        <p>Valor: $97 — Lista para importar</p>
+                    </div>
+                </div>
+                <div class="bonus-item">
+                    <span class="bonus-icon">🎨</span>
+                    <div>
+                        <h4>10 funnels pre-armados</h4>
+                        <p>Valor: $150 — Copiar, pegar, editar</p>
+                    </div>
+                </div>
+                <div class="bonus-item">
+                    <span class="bonus-icon">💬</span>
+                    <div>
+                        <h4>Acceso a comunidad privada</h4>
+                        <p>Valor: $47/mes — Soporte + networking</p>
+                    </div>
+                </div>
+                <div class="bonus-item">
+                    <span class="bonus-icon">📚</span>
+                    <div>
+                        <h4>Ebook digital incluido</h4>
+                        <p>Valor: $19 — El sistema en texto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= INSCRIPCIÓN / PRICING ========= -->
+    <section class="pricing" id="inscripcion">
+        <div class="pricing-card">
+            <div class="pricing-badge">🔥 Cupos limitados</div>
+            <h3>Taller Sistema GHL</h3>
+            <div class="price-row">
+                <span class="price-old">$397</span>
+                <span class="price-new">$197</span>
+                <span class="price-tag">USD</span>
+            </div>
+            <p class="price-desc">Pago único · Acceso de por vida · 30 días de soporte directo</p>
+
+            <ul class="price-features">
+                <li><i class="fas fa-circle-check"></i> 4 módulos completos (+12 hs de video)</li>
+                <li><i class="fas fa-circle-check"></i> 26 lecciones paso a paso</li>
+                <li><i class="fas fa-circle-check"></i> Plantillas y workflows descargables</li>
+                <li><i class="fas fa-circle-check"></i> Soporte 1-a-1 por 30 días</li>
+                <li><i class="fas fa-circle-check"></i> Comunidad privada de por vida</li>
+                <li><i class="fas fa-circle-check"></i> Certificado de finalización</li>
+                <li><i class="fas fa-circle-check"></i> Ebook incluido + 10 funnels bonus</li>
+            </ul>
+
+            <a href="#" class="btn-retro btn-primary-retro btn-full">
+                Inscribirme al taller <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <div class="trust-row">
+                <span><i class="fas fa-shield-halved"></i> Pago seguro</span>
+                <span><i class="fas fa-rotate-left"></i> Garantía 14 días</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= FAQ ========= -->
+    <section class="faq">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Preguntas <span class="italic-em">frecuentes</span></h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>¿El taller es en vivo o grabado?</summary>
+                <p>Es 100% online y grabado, para que puedas aprender a tu ritmo. Además, una vez al mes hay un Q&A en vivo para dudas.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Necesito tener GoHighLevel comprado antes?</summary>
+                <p>No. Dentro del taller te muestro cómo conseguir prueba gratuita y qué plan contratar según tu negocio.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Cuánto tiempo tardo en terminarlo?</summary>
+                <p>Depende tuyo. La mayoría termina en 2-4 semanas dedicando 2-3 hs por semana.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Qué pasa si no entiendo algo?</summary>
+                <p>Tenés 30 días de soporte conmigo por email/WhatsApp y acceso permanente a la comunidad privada.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Hay garantía?</summary>
+                <p>Sí, 14 días de garantía total. Si no te sirve, te devuelvo el 100%.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- ========= CTA FINAL ========= -->
+    <section class="cta-final">
+        <h2>Dejá de depender <em>de otros</em><br>para automatizar tu negocio.</h2>
+        <p class="cta-sub">En 4 semanas vas a tener tu propio sistema funcionando.</p>
+        <a href="#inscripcion" class="btn btn-dark btn-xl">
+            Inscribirme — $197 <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 TALIDECODE — Hecho con ❤️ + código</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>

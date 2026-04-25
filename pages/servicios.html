@@ -1,58 +1,278 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios | TaliCode</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | TALIDECODE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/style-servicios.css">
 </head>
 <body>
-<div class="grid-bg"></div>
-<div class="cursor-glow" aria-hidden="true"></div>
-<div id="site-navbar"></div>
-<div id="tech-banner"></div>
-<section class="container">
 
-<h1>Productos y servicios</h1>
+    <!-- ========= HEADER ========= -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <span class="logo-dot"></span>
+                <h2>talidecode</h2>
+            </a>
 
-<div class="grid">
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
 
-<!-- EBOOK -->
-<div class="card">
-  <h3>📘 Sistema en 30 días con IA</h3>
-  <p>Aprendé a crear tu negocio digital automatizado.</p>
-  <a href="https://pay.hotmart.com/K105205954B" class="btn-primary">Comprar</a>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html">Inicio</a>
+            <div class="has-submenu">
+    <button class="submenu-btn" onclick="toggleSubmenu(event)">
+        <a href="./pages/servicios.html" class="submenu-main-link">Servicios</a>
+        <span class="arrow" id="arrow">▼</span>
+    </button>
+    <div class="submenu" id="submenu">
+        <a href="./pages/ebook.html">📘 Ebook</a>
+        <a href="./pages/servicio-implementacion.html">⚙️ Taller GHL</a>
+        <a href="./pages/producto-bootcamp.html">🚀 Funnels</a>
+    </div>
 </div>
+            <div class="has-submenu">
+                <button class="submenu-btn" onclick="toggleSubmenu(event)">
+                    Servicios <span class="arrow" id="arrow">▼</span>
+                </button>
+                <div class="submenu" id="submenu">
+                    <a href="ebook.html">📘 Ebook</a>
+                    <a href="producto-bootcamp.html">⚙️ Taller GHL</a>
+                    <a href="servicio-implementacion.html">🚀 Funnels</a>
+                </div>
+            </div>
+            <a href="portafolio.html">Portafolio</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="https://www.skool.com/vertice-b2b-1871">Comunidad</a>
+        </div>
+    </header>
 
-<!-- PACK -->
-<div class="card">
-  <h3>⚙️ Pack Automatizaciones</h3>
-  <p>Workflows listos para usar en GHL.</p>
-  <a href="TU_LINK_PACK" class="btn-primary">Comprar</a>
-</div>
+    <!-- ========= HERO GRID ASIMÉTRICO ========= -->
+    <section class="serv-hero">
 
-<!-- BOOTCAMP -->
-<div class="card">
-  <h3>🚀 Bootcamp GHL</h3>
-  <p>Formación completa con soporte.</p>
-  <a href="TU_LINK_BOOTCAMP" class="btn-primary">Entrar</a>
-</div>
+        <!-- Card intro principal -->
+        <div class="card card-intro">
+            <span class="mini-tag">
+                <span class="dot-live"></span> Elegí tu sistema
+            </span>
+            <h1>Servicios <span class="highlight-italic">hechos para vender.</span></h1>
+            <p>Sistemas automáticos, funnels y formación. Elegí el que tu negocio necesita hoy.</p>
+            <div class="intro-chips">
+                <span class="chip"><i class="fas fa-check"></i> Resultados reales</span>
+                <span class="chip"><i class="fas fa-bolt"></i> Implementación rápida</span>
+                <span class="chip"><i class="fas fa-shield-halved"></i> Soporte incluido</span>
+            </div>
+        </div>
 
-<!-- IMPLEMENTACIÓN -->
-<div class="card">
-  <h3>💼 Implementación personalizada</h3>
-  <p>CRM + automatización lista para tu negocio.</p>
-  <a href="contacto.html" class="btn-outline">Consultar</a>
-</div>
+        <!-- Card ilustración plastilina decorativa -->
+        <div class="card card-illus">
+            <div class="illus-scene">
+                <div class="illus-cloud c1"></div>
+                <div class="illus-cloud c2"></div>
+                <div class="illus-hill hill-left"></div>
+                <div class="illus-hill hill-right"></div>
+                <div class="illus-flower">
+                    <div class="flower-stem"></div>
+                    <div class="flower-head">🌸</div>
+                </div>
+                <div class="illus-pipe">
+                    <div class="pipe-top"></div>
+                    <div class="pipe-body"></div>
+                </div>
+            </div>
+        </div>
 
-</div>
+    </section>
 
-</section>
-<div id="site-footer"></div>
+    <!-- ========= PICK YOUR SERVICE ========= -->
+    <section class="pick-section">
+        <div class="section-head">
+            <h2>Pick your <em>system</em></h2>
+            <p class="section-sub">Pasá el mouse y descubrí qué incluye cada uno.</p>
+        </div>
 
-<script type="module" src="../js/app.js"></script>
+        <div class="flip-grid">
+
+            <!-- ===== EBOOK ===== -->
+            <div class="flip-card card-ebook">
+                <div class="flip-inner">
+                    <!-- FRONT -->
+                    <div class="flip-front">
+                        <div class="front-head">
+                            <span class="front-label">📘 Ebook</span>
+                            <span class="front-price">$19</span>
+                        </div>
+                        <div class="front-visual ebook-visual">
+                            <div class="book-3d">
+                                <div class="book-cover"></div>
+                                <div class="book-pages"></div>
+                                <div class="book-spine"></div>
+                            </div>
+                        </div>
+                        <div class="front-foot">
+                            <h3>Ebook Digital</h3>
+                            <p>Guía práctica para automatizar desde cero</p>
+                            <span class="hover-hint">Pasá el mouse →</span>
+                        </div>
+                    </div>
+                    <!-- BACK -->
+                    <div class="flip-back back-ebook">
+                        <h3>📘 Incluye</h3>
+                        <ul class="feat-list">
+                            <li><i class="fas fa-circle-check"></i> PDF + plantillas Notion</li>
+                            <li><i class="fas fa-circle-check"></i> Mapa paso a paso</li>
+                            <li><i class="fas fa-circle-check"></i> Checklists de 7 días</li>
+                            <li><i class="fas fa-circle-check"></i> Actualizaciones de por vida</li>
+                        </ul>
+                        <div class="back-price-box">
+                            <span class="big-price">$19</span>
+                            <small>Pago único · Acceso inmediato</small>
+                        </div>
+                        <a href="ebook.html" class="btn-flip">
+                            Quiero el Ebook <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== TALLER GHL ===== -->
+            <div class="flip-card card-taller">
+                <div class="flip-inner">
+                    <!-- FRONT -->
+                    <div class="flip-front">
+                        <div class="front-head">
+                            <span class="front-label">⚙️ Taller</span>
+                            <span class="front-price">$197</span>
+                        </div>
+                        <div class="front-visual taller-visual">
+                            <div class="gear-big">⚙️</div>
+                            <div class="gear-small">⚙️</div>
+                            <div class="spark s1"></div>
+                            <div class="spark s2"></div>
+                            <div class="spark s3"></div>
+                        </div>
+                        <div class="front-foot">
+                            <h3>Taller Sistema GHL</h3>
+                            <p>Dominá GoHighLevel desde cero</p>
+                            <span class="hover-hint">Pasá el mouse →</span>
+                        </div>
+                    </div>
+                    <!-- BACK -->
+                    <div class="flip-back back-taller">
+                        <h3>⚙️ Incluye</h3>
+                        <ul class="feat-list">
+                            <li><i class="fas fa-circle-check"></i> Setup completo de CRM</li>
+                            <li><i class="fas fa-circle-check"></i> Automatizaciones + pipelines</li>
+                            <li><i class="fas fa-circle-check"></i> WhatsApp API</li>
+                            <li><i class="fas fa-circle-check"></i> 30 días de soporte</li>
+                        </ul>
+                        <div class="back-price-box">
+                            <span class="big-price">$197</span>
+                            <small>Acceso de por vida</small>
+                        </div>
+                        <a href="servicio-implementacion.html" class="btn-flip">
+                            Inscribirme <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FUNNELS ===== -->
+            <div class="flip-card card-funnels">
+                <div class="flip-inner">
+                    <!-- FRONT -->
+                    <div class="flip-front">
+                        <div class="front-head">
+                            <span class="front-label">🚀 Funnels</span>
+                            <span class="front-price">desde $497</span>
+                        </div>
+                        <div class="front-visual funnels-visual">
+                            <div class="funnel-shape">
+                                <div class="funnel-lead l1"></div>
+                                <div class="funnel-lead l2"></div>
+                                <div class="funnel-lead l3"></div>
+                            </div>
+                        </div>
+                        <div class="front-foot">
+                            <h3>Funnels Completos</h3>
+                            <p>Landing + CRM + seguimiento</p>
+                            <span class="hover-hint">Pasá el mouse →</span>
+                        </div>
+                    </div>
+                    <!-- BACK -->
+                    <div class="flip-back back-funnels">
+                        <h3>🚀 Incluye</h3>
+                        <ul class="feat-list">
+                            <li><i class="fas fa-circle-check"></i> Landing alta conversión</li>
+                            <li><i class="fas fa-circle-check"></i> Email + WhatsApp auto</li>
+                            <li><i class="fas fa-circle-check"></i> CRM + dashboard</li>
+                            <li><i class="fas fa-circle-check"></i> Integración Hotmart/Stripe</li>
+                        </ul>
+                        <div class="back-price-box">
+                            <span class="big-price">$497+</span>
+                            <small>Llave en mano · 3-4 sem</small>
+                        </div>
+                        <a href="producto-bootcamp.html" class="btn-flip">
+                            Agendar Diagnóstico <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= COMPARADOR RÁPIDO ========= -->
+    <section class="compare">
+        <div class="section-head">
+            <h2>¿Cuál es <em>para vos</em>?</h2>
+        </div>
+        <div class="compare-grid">
+            <div class="compare-card">
+                <span class="compare-icon">🌱</span>
+                <h4>Estás empezando</h4>
+                <p>Aprendé sola con el <strong>Ebook</strong>. Ideal si tenés tiempo y querés bajar costos.</p>
+                <a href="ebook.html" class="compare-link">Ver Ebook →</a>
+            </div>
+            <div class="compare-card highlight-card">
+                <span class="compare-icon">🚀</span>
+                <h4>Querés acelerar</h4>
+                <p>El <strong>Taller GHL</strong> te enseña a construir tu propio sistema con guía directa.</p>
+                <a href="servicio-implementacion.html" class="compare-link">Ver Taller →</a>
+            </div>
+            <div class="compare-card">
+                <span class="compare-icon">💎</span>
+                <h4>Querés delegar</h4>
+                <p>Con <strong>Funnels</strong> lo hago yo por vos. Llave en mano, cero estrés.</p>
+                <a href="producto-bootcamp.html" class="compare-link">Ver Funnels →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= CTA FINAL ========= -->
+    <section class="cta-final">
+        <h2>¿No sabés cuál <em>elegir?</em></h2>
+        <p class="cta-sub">Agendá un diagnóstico gratis de 15 minutos y te digo exactamente qué necesitás.</p>
+        <a href="contacto.html" class="btn btn-dark btn-xl">
+            Agendar diagnóstico gratis <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 TALIDECODE — Hecho con ❤️ + código</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>

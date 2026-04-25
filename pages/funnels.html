@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funnels que venden | TALIDECODE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/funnels.css">
+</head>
+<body>
+
+    <!-- ========= HEADER ========= -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <span class="logo-dot"></span>
+                <h2>talidecode</h2>
+            </a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html">Inicio</a>
+            <div class="has-submenu">
+                <button class="submenu-btn" onclick="toggleSubmenu(event)">
+                    <a href="servicios.html" class="submenu-main-link">Servicios</a>
+                    <span class="arrow" id="arrow">▼</span>
+                </button>
+                <div class="submenu" id="submenu">
+                    <a href="ebook.html">📘 Ebook</a>
+                    <a href="producto-bootcamp.html">⚙️ Taller GHL</a>
+                    <a href="servicio-implementacion.html">🚀 Funnels</a>
+                </div>
+            </div>
+            <a href="portafolio.html">Portafolio</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </header>
+
+    <!-- ========= HERO BLOOM STYLE ========= -->
+    <section class="funnels-hero">
+        <div class="hero-bloom-card">
+
+            <div class="bloom-left">
+                <span class="retro-tag">
+                    <span class="tag-dot"></span> Funnels · llave en mano
+                </span>
+                <h1 class="retro-title">Sistemas<br>que venden<br><span class="gradient-word">por vos.</span></h1>
+                <p class="bloom-desc">
+                    Diseño, construyo y automatizo funnels completos para que atraigas clientes 
+                    mientras dormís. Landing + CRM + seguimiento, todo listo en 3-4 semanas.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="#diagnostico" class="btn-retro btn-primary-retro">
+                        Agendar diagnóstico <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#casos" class="btn-retro btn-secondary-retro">
+                        Ver casos reales
+                    </a>
+                </div>
+
+                <div class="hero-chips">
+                    <span class="chip"><i class="fas fa-check"></i> 3-4 semanas</span>
+                    <span class="chip"><i class="fas fa-bolt"></i> Llave en mano</span>
+                    <span class="chip"><i class="fas fa-shield-halved"></i> Garantía de conversión</span>
+                </div>
+            </div>
+
+            <!-- Escena plastilina con embudo -->
+            <div class="bloom-right">
+                <div class="bloom-scene">
+                    <!-- Nubes -->
+                    <div class="sky-cloud cloud-1"></div>
+                    <div class="sky-cloud cloud-2"></div>
+
+                    <!-- Colinas -->
+                    <div class="hill hill-back"></div>
+                    <div class="hill hill-front"></div>
+
+                    <!-- Embudo 3D centro -->
+                    <div class="funnel-scene">
+                        <div class="lead-drop lead-1"></div>
+                        <div class="lead-drop lead-2"></div>
+                        <div class="lead-drop lead-3"></div>
+                        <div class="lead-drop lead-4"></div>
+                        <div class="funnel-body"></div>
+                        <div class="money-out">💰</div>
+                    </div>
+
+                    <!-- Sparkles -->
+                    <div class="sparkle sp1">✨</div>
+                    <div class="sparkle sp2">⭐</div>
+                    <div class="sparkle sp3">✨</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= PICK YOUR FUNNEL (los 3 tipos) ========= -->
+    <section class="funnel-types" id="casos">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Pick your <span class="italic-em">funnel</span></h2>
+            <p>Elegí el tipo de embudo según tu objetivo de negocio.</p>
+        </div>
+
+        <div class="types-grid">
+
+            <!-- FUNNEL 1: Captación -->
+            <div class="type-card card-blue">
+                <span class="type-tag">🎣 Captación</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-blue"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-image"></i>
+                        <small>Mockup Captación</small>
+                    </div>
+                </div>
+                <h3>Funnel de Captación</h3>
+                <p>Landing + lead magnet + nurturing. Transformá visitantes en leads calificados.</p>
+                <ul class="type-list">
+                    <li><i class="fas fa-circle-check"></i> Landing optimizada</li>
+                    <li><i class="fas fa-circle-check"></i> Lead magnet</li>
+                    <li><i class="fas fa-circle-check"></i> Secuencia de emails</li>
+                </ul>
+            </div>
+
+            <!-- FUNNEL 2: Venta Directa -->
+            <div class="type-card card-peach">
+                <span class="type-tag">💸 Venta Directa</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-peach"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-image"></i>
+                        <small>Mockup Venta</small>
+                    </div>
+                </div>
+                <h3>Funnel de Venta</h3>
+                <p>Sales page + checkout + upsells. Vendé productos y servicios en automático.</p>
+                <ul class="type-list">
+                    <li><i class="fas fa-circle-check"></i> Sales page</li>
+                    <li><i class="fas fa-circle-check"></i> Checkout integrado</li>
+                    <li><i class="fas fa-circle-check"></i> Order bumps + upsells</li>
+                </ul>
+            </div>
+
+            <!-- FUNNEL 3: Agendamiento -->
+            <div class="type-card card-mint">
+                <span class="type-tag">📅 Agendamiento</span>
+                <div class="mockup-retro">
+                    <div class="bars-bg bars-mint"></div>
+                    <div class="placeholder-sm">
+                        <i class="fas fa-image"></i>
+                        <small>Mockup Agenda</small>
+                    </div>
+                </div>
+                <h3>Funnel de Llamadas</h3>
+                <p>Para servicios high-ticket. Filtrá leads y llená tu agenda sin tener que chasear.</p>
+                <ul class="type-list">
+                    <li><i class="fas fa-circle-check"></i> VSL + formulario</li>
+                    <li><i class="fas fa-circle-check"></i> Calendly integrado</li>
+                    <li><i class="fas fa-circle-check"></i> Recordatorios auto</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========= PREGUNTA BLOOM (existing dashboard) ========= -->
+    <section class="existing-section">
+        <div class="showcase-grid">
+            <div class="showcase-text">
+                <span class="mini-tag"><span class="dot-live"></span> Integraciones</span>
+                <h2 class="retro-title-small">¿Ya tenés una <span class="italic-em">web existente?</span></h2>
+                <p>
+                    No tirás nada a la basura. Conecto tu funnel a lo que ya tenés funcionando 
+                    — web, CRM, pasarelas de pago o herramientas — sin romper nada.
+                </p>
+                <ul class="showcase-list">
+                    <li><i class="fas fa-circle-check"></i> WordPress / Shopify / Wix</li>
+                    <li><i class="fas fa-circle-check"></i> Hotmart / Stripe / Mercado Pago</li>
+                    <li><i class="fas fa-circle-check"></i> Google Calendar / Zapier / Make</li>
+                    <li><i class="fas fa-circle-check"></i> WhatsApp API + Email marketing</li>
+                </ul>
+                <a href="#diagnostico" class="btn-retro btn-primary-retro">
+                    Analicemos tu caso <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <!-- ESPACIO MOCKUP DASHBOARD FUNNEL -->
+            <div class="showcase-image">
+                <div class="mockup-retro mockup-big">
+                    <div class="bars-bg bars-mint"></div>
+                    <div class="placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Mockup Dashboard Funnel</p>
+                        <small>Subí tu imagen acá<br>(../assets/images/funnel-dashboard.png)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= PROCESO (3 pasos) ========= -->
+    <section class="process-section">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Cómo <span class="italic-em">trabajamos</span></h2>
+            <p>Un flujo claro, sin humo. 3 etapas y tu sistema funcionando.</p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-step">
+                <span class="step-pixel">01</span>
+                <div class="step-icon">🔍</div>
+                <h4>Diagnóstico</h4>
+                <p>Análisis de tu negocio, audiencia y oportunidades. Propuesta clara y sin humo.</p>
+                <span class="step-time"><i class="fas fa-clock"></i> 1 semana</span>
+            </div>
+            <div class="process-step highlight-step">
+                <span class="step-pixel">02</span>
+                <div class="step-icon">🛠️</div>
+                <h4>Construcción</h4>
+                <p>Diseño, copy, automatizaciones y conexiones. Todo armado y testeado.</p>
+                <span class="step-time"><i class="fas fa-clock"></i> 2-3 semanas</span>
+            </div>
+            <div class="process-step">
+                <span class="step-pixel">03</span>
+                <div class="step-icon">🚀</div>
+                <h4>Lanzamiento + Escalado</h4>
+                <p>Entrega, capacitación, monitoreo de métricas y optimización continua.</p>
+                <span class="step-time"><i class="fas fa-clock"></i> Ongoing</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= INCLUYE (lo que te llevás) ========= -->
+    <section class="included-section">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Qué <span class="italic-em">incluye</span></h2>
+        </div>
+
+        <div class="included-grid">
+            <div class="include-card">
+                <div class="i-emoji">📱</div>
+                <h4>Landing Page</h4>
+                <p>Diseño premium mobile-first con copy orientado a conversión.</p>
+            </div>
+            <div class="include-card">
+                <div class="i-emoji">⚡</div>
+                <h4>Automatizaciones</h4>
+                <p>Workflows de emails + WhatsApp + SMS según el flujo del lead.</p>
+            </div>
+            <div class="include-card">
+                <div class="i-emoji">🧠</div>
+                <h4>CRM configurado</h4>
+                <p>Pipeline, tags, segmentación y tracking completo de conversión.</p>
+            </div>
+            <div class="include-card">
+                <div class="i-emoji">💳</div>
+                <h4>Pasarela de pagos</h4>
+                <p>Integración con Stripe, Hotmart, MercadoPago o la que necesites.</p>
+            </div>
+            <div class="include-card">
+                <div class="i-emoji">📊</div>
+                <h4>Dashboard de métricas</h4>
+                <p>Visualización en vivo de CTR, conversión, ventas y ROI.</p>
+            </div>
+            <div class="include-card">
+                <div class="i-emoji">🎓</div>
+                <h4>Capacitación</h4>
+                <p>Te enseño a gestionar todo para que no dependas de nadie.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= RESULTADOS / CASOS ========= -->
+    <section class="results-section">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Resultados <span class="italic-em">reales</span></h2>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-number">+217%</div>
+                <p class="result-desc">Conversión en 60 días</p>
+                <small class="result-tag">Coach de ventas</small>
+            </div>
+            <div class="result-card highlight-result">
+                <div class="result-number">48 hs</div>
+                <p class="result-desc">Agenda llena en 2 días</p>
+                <small class="result-tag">Consultora fitness</small>
+            </div>
+            <div class="result-card">
+                <div class="result-number">$12k</div>
+                <p class="result-desc">Ventas auto/mes</p>
+                <small class="result-tag">Curso online</small>
+            </div>
+            <div class="result-card">
+                <div class="result-number">-72%</div>
+                <p class="result-desc">Tiempo en tareas manuales</p>
+                <small class="result-tag">Agencia digital</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= PRICING / DIAGNÓSTICO ========= -->
+    <section class="pricing" id="diagnostico">
+        <div class="pricing-card">
+            <div class="pricing-badge">💎 Proyecto llave en mano</div>
+            <h3>Funnel Completo</h3>
+            <div class="price-row">
+                <span class="price-from">desde</span>
+                <span class="price-new">$497</span>
+                <span class="price-tag">USD</span>
+            </div>
+            <p class="price-desc">El precio final depende del alcance. Diagnóstico gratis para cotizarte.</p>
+
+            <ul class="price-features">
+                <li><i class="fas fa-circle-check"></i> Landing page de alta conversión</li>
+                <li><i class="fas fa-circle-check"></i> Copy + diseño + mobile responsive</li>
+                <li><i class="fas fa-circle-check"></i> CRM + pipelines + automatizaciones</li>
+                <li><i class="fas fa-circle-check"></i> Email + WhatsApp + SMS integrados</li>
+                <li><i class="fas fa-circle-check"></i> Pasarela de pagos configurada</li>
+                <li><i class="fas fa-circle-check"></i> Dashboard de métricas</li>
+                <li><i class="fas fa-circle-check"></i> Capacitación + 30 días soporte</li>
+                <li><i class="fas fa-circle-check"></i> Garantía de conversión</li>
+            </ul>
+
+            <a href="../pages/contacto.html" class="btn-retro btn-primary-retro btn-full">
+                Agendar diagnóstico gratis <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <div class="trust-row">
+                <span><i class="fas fa-shield-halved"></i> Contrato claro</span>
+                <span><i class="fas fa-handshake"></i> Sin sorpresas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= FAQ ========= -->
+    <section class="faq">
+        <div class="section-head-center">
+            <h2 class="retro-title-small">Preguntas <span class="italic-em">frecuentes</span></h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>¿Cuánto tarda en estar listo el funnel?</summary>
+                <p>Entre 3 y 4 semanas dependiendo de la complejidad. En el diagnóstico te doy fecha exacta de entrega.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Qué pasa si ya tengo una web?</summary>
+                <p>Perfecto. Integramos el funnel a tu sitio actual sin tocar lo que ya funciona. No hay que migrar nada.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿El copy lo escribís vos?</summary>
+                <p>Sí, el copy está incluido. Hago research de tu audiencia y escribo para convertir, no para rellenar.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Puedo editarlo después yo misma?</summary>
+                <p>Sí, por eso incluye capacitación. Te enseño a manejarlo para que seas 100% independiente.</p>
+            </details>
+            <details class="faq-item">
+                <summary>¿Qué garantía ofrecés?</summary>
+                <p>Garantía de conversión: si el funnel no convierte según los benchmarks del nicho, lo optimizo sin costo hasta que funcione.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- ========= CTA FINAL ========= -->
+    <section class="cta-final">
+        <h2>Dejá de perseguir clientes.<br><em>Hacé que te busquen.</em></h2>
+        <p class="cta-sub">Agendá 15 minutos conmigo y te digo exactamente qué funnel necesitás.</p>
+        <a href="../pages/contacto.html" class="btn btn-dark btn-xl">
+            Agendar diagnóstico gratis <i class="fas fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 TALIDECODE — Hecho con ❤️ + código</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FESTA EN BUSAN - 13 Aniversario de BTS</title>
+  <meta name="description" content="Celebra el 13 Aniversario de BTS con ARMY. Explora la galería Arirang de los integrantes y revive los mejores momentos en Busan. Hecho con amor de ARMY.">
+  
+  <!-- SEO & Open Graph -->
+  <meta property="og:title" content="FESTA EN BUSAN - 13 Aniversario de BTS">
+  <meta property="og:description" content="Una landing page interactiva dedicada a BTS en su aniversario Nro. 13. Hecho con amor de ARMY.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ----------------------------------------------------
+       1. VARIABLES & CORE STYLES
+       ---------------------------------------------------- */
+    :root {
+      /* Colors */
+      --bg-dark: #070509;
+      --bg-card: #110d18;
+      --purple-army: #8b5cf6;
+      --purple-glow: rgba(139, 92, 246, 0.15);
+      --purple-accent: #c084fc;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --white: #ffffff;
+      
+      /* Arirang Palette */
+      --arirang-bg: #09090b;
+      --arirang-card-bg: #121214;
+      --arirang-red: #e11d48;
+      --arirang-red-glow: rgba(225, 29, 72, 0.4);
+      --arirang-border: #27272a;
+      
+      /* Fonts */
+      --font-headings: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      /* Transitions */
+      --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Scrollbar Style */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #312e81;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--purple-army);
+    }
+
+    /* Layout Utilities */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-title {
+      font-family: var(--font-headings);
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .purple-gradient-text {
+      background: linear-gradient(135deg, var(--purple-accent) 0%, var(--purple-army) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Ambient Glow Backgrounds */
+    .glow-sphere {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--purple-glow) 0%, rgba(0,0,0,0) 70%);
+      filter: blur(60px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .glow-sphere-1 {
+      top: 15%;
+      left: -10%;
+    }
+
+    .glow-sphere-2 {
+      top: 60%;
+      right: -10%;
+    }
+
+    /* ----------------------------------------------------
+       2. HERO SECTION
+       ---------------------------------------------------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .hero-bg-accent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, rgba(0,0,0,0) 80%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    .hero-tag {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--purple-accent);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      display: inline-block;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 0.5rem 1.5rem;
+      border-radius: 9999px;
+      background: rgba(139, 92, 246, 0.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      font-family: var(--font-headings);
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-weight: 600;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--purple-army) 0%, #6d28d9 100%);
+      border: none;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: var(--transition-smooth);
+    }
+
+    .scroll-indicator:hover {
+      opacity: 1;
+    }
+
+    /* ----------------------------------------------------
+       3. SECCIÓN 1: CAROUSEL DE ANIVERSARIO
+       ---------------------------------------------------- */
+    .carousel-section {
+      padding: 8rem 0;
+      position: relative;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      aspect-ratio: 16/9;
+    }
+
+    .carousel-track-container {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: var(--transition-smooth);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Slide Overlay Gradient */
+    .carousel-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      background: linear-gradient(to top, rgba(7, 5, 9, 0.95) 0%, rgba(7, 5, 9, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem;
+      color: var(--white);
+    }
+
+    .carousel-slide-title {
+      font-family: var(--font-headings);
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+
+    .carousel-slide-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    /* Carousel Nav Arrows */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: var(--white);
+      transition: var(--transition-smooth);
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(139, 92, 246, 0.3);
+      border-color: var(--purple-accent);
+      color: var(--white);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn-left {
+      left: 20px;
+    }
+
+    .carousel-btn-right {
+      right: 20px;
+    }
+
+    .carousel-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Carousel Indicators */
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 2rem;
+    }
+
+    .carousel-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .carousel-indicator.active {
+      background: var(--purple-accent);
+      width: 36px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px var(--purple-army);
+    }
+
+    /* ----------------------------------------------------
+       4. SECCIÓN 2: INTEGRANTES ("LOS 7") - ARIRANG AESTHETIC
+       ---------------------------------------------------- */
+    .arirang-section {
+      background-color: var(--arirang-bg);
+      padding: 8rem 0;
+      position: relative;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .arirang-section .container {
+      max-width: 1550px;
+    }
+
+    .arirang-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .arirang-title-sub {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      color: var(--arirang-red);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .arirang-title {
+      font-family: var(--font-headings);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .arirang-title span {
+      color: var(--arirang-red);
+    }
+
+    /* 7 Columns Responsive Grid */
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .members-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .members-grid {
+        grid-template-columns: repeat(7, 1fr);
+      }
+    }
+
+    /* Member Card Design */
+    .member-card {
+      background: var(--arirang-card-bg);
+      border: 1px solid var(--arirang-border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    /* Visual Accent for Arirang Design */
+    .member-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--arirang-red);
+      opacity: 0.4;
+      transition: var(--transition-smooth);
+    }
+
+    .member-img-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .member-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.1);
+      transition: var(--transition-smooth);
+    }
+
+    /* Arirang Card Text Info (Strictly Red, Black, White) */
+    .member-info {
+      padding: 1.5rem 4rem 1.5rem 1.2rem;
+      background-color: var(--arirang-card-bg);
+      border-top: 1px solid var(--arirang-border);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    /* Korean Calligraphy Stamp Accent */
+    .member-stamp {
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--arirang-red);
+      border: 2px solid var(--arirang-red);
+      padding: 0.2rem 0.4rem;
+      text-transform: uppercase;
+      border-radius: 4px;
+      opacity: 0.7;
+      transition: var(--transition-smooth);
+      font-family: var(--font-headings);
+    }
+
+    .member-role {
+      font-size: 0.75rem;
+      color: var(--arirang-red);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .member-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      font-family: var(--font-body);
+    }
+
+    .member-korean {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
+    }
+
+    /* HOVER INTERACTIONS (Arirang Red Highlights & Translation) */
+    .member-card:hover, .member-card.card-hovered {
+      transform: translateY(-12px);
+      border-color: var(--arirang-red);
+      box-shadow: 0 15px 30px var(--arirang-red-glow);
+    }
+
+    .member-card:hover::before, .member-card.card-hovered::before {
+      opacity: 1;
+      height: 6px;
+    }
+
+    .member-card:hover .member-img, .member-card.card-hovered .member-img {
+      filter: grayscale(0%) contrast(1);
+      transform: scale(1.05);
+    }
+
+    .member-card:hover .member-stamp, .member-card.card-hovered .member-stamp {
+      opacity: 1;
+      background: var(--arirang-red);
+      color: var(--arirang-bg);
+    }
+
+    /* ----------------------------------------------------
+       5. SECCIÓN 3: VIDEO DE BUSAN (RESPONSIVE 16:9)
+       ---------------------------------------------------- */
+    .video-section {
+      padding: 8rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      position: relative;
+      background-color: #000;
+      aspect-ratio: 16/9;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-poster {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .video-poster::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      transition: var(--transition-smooth);
+      z-index: 1;
+    }
+
+    .video-poster:hover::after {
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .video-poster:hover {
+      transform: scale(1.01);
+    }
+
+    .play-btn {
+      position: relative;
+      z-index: 2;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--arirang-red);
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(225, 29, 72, 0.6);
+      transition: var(--transition-smooth);
+    }
+
+    .video-poster:hover .play-btn {
+      transform: scale(1.1);
+      background: var(--purple-army);
+      box-shadow: 0 0 45px rgba(139, 92, 246, 0.85);
+    }
+
+    .play-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+      margin-left: 4px;
+    }
+
+    .video-heading {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .video-title {
+      font-family: var(--font-headings);
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .video-desc {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* ----------------------------------------------------
+       6. FOOTER
+       ---------------------------------------------------- */
+    footer {
+      background-color: #040306;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 5rem 0 3rem 0;
+      position: relative;
+      text-align: center;
+    }
+
+    .footer-dedication {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .footer-dedication svg {
+      width: 24px;
+      height: 24px;
+      fill: #ef4444;
+      animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+
+    /* Social Icons Row */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .social-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .social-btn:hover {
+      color: var(--purple-accent);
+      background: rgba(139, 92, 246, 0.1);
+      border-color: var(--purple-army);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+      color: #6b7280;
+      letter-spacing: 1px;
+    }
+
+    /* ----------------------------------------------------
+       7. KEYFRAMES ANIMATIONS
+       ---------------------------------------------------- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+      }
+      40% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+      60% {
+        transform: translateY(-5px) translateX(-50%);
+      }
+    }
+
+    @keyframes heartBeat {
+      0% {
+        transform: scale(1);
+      }
+      14% {
+        transform: scale(1.15);
+      }
+      28% {
+        transform: scale(1);
+      }
+      42% {
+        transform: scale(1.15);
+      }
+      70% {
+        transform: scale(1);
+      }
+    }
+
+    /* ----------------------------------------------------
+       8. RESPONSIVE DESIGN TWEAKS
+       ---------------------------------------------------- */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .carousel-overlay {
+        padding: 1.5rem;
+      }
+      .carousel-slide-title {
+        font-size: 1.5rem;
+      }
+      .carousel-slide-desc {
+        font-size: 0.9rem;
+      }
+      .carousel-btn {
+        width: 44px;
+        height: 44px;
+      }
+      .carousel-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+      .carousel-container {
+        border-radius: 12px;
+      }
+      /* Arirang Section Mobile Centering & Sizing */
+      .arirang-title {
+        font-size: 2.2rem;
+        word-break: break-word;
+      }
+      .members-grid {
+        justify-items: center;
+      }
+      .member-card {
+        max-width: 340px;
+        width: 100%;
+      }
+      .member-info {
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+      }
+      .member-stamp {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-top: 1rem;
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Ambient Glow -->
+  <div class="glow-sphere glow-sphere-1"></div>
+  <div class="glow-sphere glow-sphere-2"></div>
+
+  <!-- ====================================================
+       HERO SECTION
+       ==================================================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-accent"></div>
+    <div class="hero-content">
+      <span class="hero-tag">BTS 13th Anniversary</span>
+      <h1 class="hero-title"><span class="purple-gradient-text">FESTA EN BUSAN</span></h1>
+      <p class="hero-subtitle">Feliz Aniversario Nro. 13. Una celebración histórica hecha con amor de ARMY.</p>
+      <a href="#carousel" class="hero-btn">Explorar la Festa</a>
+    </div>
+    <div class="scroll-indicator" onclick="document.getElementById('carousel').scrollIntoView();">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 1: ANNIVERSARY CAROUSEL
+       ==================================================== -->
+  <section class="carousel-section" id="carousel">
+    <div class="container">
+      <h2 class="section-title">Momentos de <span class="purple-gradient-text">Festa</span></h2>
+      
+      <div class="carousel-container">
+        <!-- Navigation Buttons -->
+        <button class="carousel-btn carousel-btn-left" id="prevBtn" aria-label="Anterior slide">
+          <svg viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="carousel-btn carousel-btn-right" id="nextBtn" aria-label="Siguiente slide">
+          <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- Slides Track -->
+        <div class="carousel-track-container">
+          <div class="carousel-track" id="carouselTrack">
+            
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+              <!-- Reemplazar con URL de foto real de BTS si se desea. Imagen autogenerada por Antigravity para demo -->
+              <img src="./assets/carousel_1.jpg" alt="BTS en el escenario del concierto Yet to Come en Busan">
+              <div class="carousel-overlay">
+                <h3 class="carousel-slide-title">El Escenario de Busan</h3>
+                <p class="carousel-slide-desc">Reviviendo el momento histórico donde la ciudad se pintó enteramente de morado.</p>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <img src="./assets/carousel_2.jpg" alt="BTS interactuando con ARMY en Busan">
+              <div class="carousel-overlay">
+                <h3 class="carousel-slide-title">Conexión con ARMY</h3>
+                <p class="carousel-slide-desc">La sinergia y amor incondicional entre los siete integrantes y la marea morada.</p>
+              </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+              <img src="./assets/carousel_3.jpg" alt="El logo de BTS brillando en la galaxia morada de ARMY">
+              <div class="carousel-overlay">
+                <h3 class="carousel-slide-title">Festa Celestial</h3>
+                <p class="carousel-slide-desc">Brillando juntos a través de 13 años de música, sueños y constancia.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicators Dots -->
+      <div class="carousel-nav" id="carouselNav">
+        <button class="carousel-indicator active"></button>
+        <button class="carousel-indicator"></button>
+        <button class="carousel-indicator"></button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 2: MEMBERS GALLERY (ARIRANG ESTHETIC)
+       ==================================================== -->
+  <section class="arirang-section" id="members">
+    <div class="container">
+      <div class="arirang-header">
+        <span class="arirang-title-sub">Arirang Traditional Aesthetic</span>
+        <h2 class="arirang-title">Los <span>Siete</span> Integrantes</h2>
+      </div>
+
+      <div class="members-grid">
+        
+        <!-- RM -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="./assets/member_rm.jpeg" alt="RM" class="member-img">
+          </div>
+          <div class="member-info">
+            <span class="member-role">Líder / Rapero</span>
+            <h3 class="member-name">RM</h3>
+            <p class="member-korean">김남준 (Kim Namjoon)</p>
+            <div class="member-stamp">RM</div>
+          </div>
+        </div>
+
+        <!-- JIN -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="./assets/member_jin.jpeg" alt="Jin" class="member-img">
+          </div>
+          <div class="member-info">
+            <span class="member-role">Vocalista</span>
+            <h3 class="member-name">Jin</h3>
+            <p class="member-korean">김석진 (Kim Seokjin)</p>
+            <div class="member-stamp">JIN</div>
+          </div>
+        </div>
+
+        <!-- SUGA -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="./assets/member_suga.jpeg" alt="Suga" class="member-img">
+          </div>
+          <div class="member-info">
+            <span class="member-role">Rapero</span>
+            <h3 class="member-name">Suga</h3>
+            <p class="member-korean">민윤기 (Min Yoongi)</p>
+            <div class="member-stamp">SUGA</div>
+          </div>
+        </div>
+
+        <!-- J-HOPE -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="./assets/member_jhope.jpeg" alt="J-Hope" class="member-img">
+          </div>
+          <div class="member-info">
+            <span class="member-role">Bailarín / Rapero</span>
+            <h3 class="member-name">J-Hope</h3>
+            <p class="member-korean">정호석 (Jung Hoseok)</p>
+            <div class="member-stamp">JH</div>
+          </div>
+        </div>
+
+        <!-- JIMIN -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="./assets/member_jimin.jpeg" alt="Jimin" class="member-img">
+          </div>
+          <div class="member-info">
+            <span class="member-role">Bailarín / Vocalista</span>
+            <h3 class="member-name">Jimin</h3>
+            <p class="member-korean">박지민 (Park Jimin)</p>
+            <div class="member-stamp">JM</div>
+          </div>
+        </div>
+
+        <!-- V -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="./assets/member_v.jpeg" alt="V" class="member-img">
+          </div>
+          <div class="member-info">
+            <span class="member-role">Vocalista</span>
+            <h3 class="member-name">V</h3>
+            <p class="member-korean">김태형 (Kim Taehyung)</p>
+            <div class="member-stamp">V</div>
+          </div>
+        </div>
+
+        <!-- JUNGKOOK -->
+        <div class="member-card">
+          <div class="member-img-container">
+            <img src="./assets/member_jungkook.jpeg" alt="Jungkook" class="member-img">
+          </div>
+          <div class="member-info">
+            <span class="member-role">Vocalista / Bailarín</span>
+            <h3 class="member-name">Jungkook</h3>
+            <p class="member-korean">전정국 (Jeon Jungkook)</p>
+            <div class="member-stamp">JK</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 3: BUSAN VIDEO (RESPONSIVE)
+       ==================================================== -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="video-heading">
+        <h2 class="video-title"><span class="purple-gradient-text">Directo desde Busan</span></h2>
+        <p class="video-desc">Disfruta de la presentación emblemática de BTS "Yet To Come" en Busan, el momento en que el mundo entero se unió por una misma pasión.</p>
+      </div>
+
+      <div class="video-wrapper" id="videoWrapper">
+        <div class="video-poster" id="videoPoster" style="background-image: url('https://img.youtube.com/vi/MEoxtFRfPoc/maxresdefault.jpg');">
+          <button class="play-btn" aria-label="Reproducir video">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       FOOTER
+       ==================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-dedication">
+        <span>Una página hecha con amor de ARMY</span>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+
+      <!-- Enlaces minimalistas de redes sociales -->
+      <div class="social-links">
+        <a href="https://www.instagram.com/tali_code/" target="_blank" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@tali_code" target="_blank" class="social-btn" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.86-.74-3.95-1.72-.1.08-.18.17-.27.25-.02 3.78-.01 7.56-.02 11.34-.05 1.77-.51 3.57-1.57 4.95-1.25 1.66-3.23 2.68-5.3 2.92-2.14.28-4.42-.25-6.09-1.68-1.92-1.61-2.87-4.14-2.58-6.64.21-2.06 1.29-4.01 3.03-5.11 1.7-1.12 3.86-1.47 5.82-.99v4.11c-1.34-.41-2.88-.13-3.95.74-.95.77-1.42 2.06-1.25 3.27.14 1.13.88 2.15 1.91 2.62.98.47 2.16.42 3.08-.18.81-.51 1.29-1.43 1.34-2.39.02-3.66.01-7.32.01-10.98V0z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@TaliDeCode" target="_blank" class="social-btn" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.522 3.5 12 3.5 12 3.5s-7.522 0-9.388.555a3.002 3.002 0 0 0-2.11 2.108C0 8.029 0 12 0 12s0 3.971.502 5.837a3.003 3.003 0 0 0 2.11 2.108C4.478 20.5 12 20.5 12 20.5s7.522 0 9.388-.555a3.002 3.002 0 0 0 2.11-2.108C24 15.971 24 12 24 12s0-3.971-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+
+      <p class="copyright">&copy; 2026 FESTA EN BUSAN. Hecho con amor por ARMY. Todos los derechos de imágenes y videos pertenecen a BIGHIT MUSIC y HYBE.</p>
+    </div>
+  </footer>
+
+  <!-- ====================================================
+       INTERACTIVE JAVASCRIPT
+       ==================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Carousel Logic
+      const track = document.getElementById('carouselTrack');
+      const slides = Array.from(track.children);
+      const nextButton = document.getElementById('nextBtn');
+      const prevButton = document.getElementById('prevBtn');
+      const dotsContainer = document.getElementById('carouselNav');
+      const dots = Array.from(dotsContainer.children);
+      
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+      let slideInterval;
+
+      const updateSlidePosition = () => {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update dots active class
+        dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      };
+
+      const nextSlide = () => {
+        if (currentIndex < totalSlides - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        updateSlidePosition();
+      };
+
+      const prevSlide = () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = totalSlides - 1;
+        }
+        updateSlidePosition();
+      };
+
+      // Button Click Listeners
+      nextButton.addEventListener('click', () => {
+        nextSlide();
+        resetTimer();
+      });
+
+      prevButton.addEventListener('click', () => {
+        prevSlide();
+        resetTimer();
+      });
+
+      // Indicators Dots Click Listeners
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateSlidePosition();
+          resetTimer();
+        });
+      });
+
+      // Auto slide timing
+      const startTimer = () => {
+        slideInterval = setInterval(nextSlide, 5000); // 5 seconds interval
+      };
+
+      const resetTimer = () => {
+        clearInterval(slideInterval);
+        startTimer();
+      };
+
+      // Swipe support for touch devices
+      let startX = 0;
+      let endX = 0;
+      
+      track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      track.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+      });
+
+      const handleSwipe = () => {
+        const threshold = 50;
+        if (startX - endX > threshold) {
+          nextSlide();
+          resetTimer();
+        } else if (endX - startX > threshold) {
+          prevSlide();
+          resetTimer();
+        }
+      };
+
+      // Initialize
+      startTimer();
+
+      // Members Card mobile tap interaction
+      const memberCards = document.querySelectorAll('.member-card');
+      memberCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const isActive = card.classList.contains('card-hovered');
+          memberCards.forEach(c => c.classList.remove('card-hovered'));
+          if (!isActive) {
+            card.classList.add('card-hovered');
+          }
+        });
+      });
+
+      // Video Play / Embed workaround for file:// protocol
+      const videoWrapper = document.getElementById('videoWrapper');
+      const videoPoster = document.getElementById('videoPoster');
+      
+      if (videoPoster && videoWrapper) {
+        videoPoster.addEventListener('click', () => {
+          if (window.location.protocol === 'file:') {
+            // If loaded via file://, open in new tab to avoid Error 153
+            window.open('https://www.youtube.com/watch?v=MEoxtFRfPoc', '_blank');
+          } else {
+            // If loaded via server (http:// or https://), embed the iframe dynamically
+            videoWrapper.innerHTML = `
+              <iframe 
+                src="https://www.youtube-nocookie.com/embed/MEoxtFRfPoc?autoplay=1" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            `;
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

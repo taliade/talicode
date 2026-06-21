@@ -752,7 +752,7 @@
     font-size: 1.05rem;
 }
 
-/* ========== CONNECT SECTION ========== */
+/* ========== CONNECT SECTION & SOCIAL LINKS ========== */
 .connect-section {
     max-width: 1400px;
     margin: 0 auto;
@@ -776,4 +776,37 @@
     font-size: 1.05rem;
     max-width: 600px;
     margin: 0 auto 2rem;
+}
+.social-icon-link {
+    color: var(--text-primary);
+}
+.social-icon-link:hover {
+    transform: translateY(-5px);
+}
+.link-ig:hover { color: #DD2A7B; border-color: #DD2A7B; box-shadow: 0 0 15px rgba(221,42,123,0.3); }
+.link-tt:hover { color: #00F2EA; border-color: #00F2EA; box-shadow: 0 0 15px rgba(0,242,234,0.3); }
+.link-ln:hover { color: #0077B5; border-color: #0077B5; box-shadow: 0 0 15px rgba(0,119,181,0.3); }
+.link-yt:hover { color: #FF0000; border-color: #FF0000; box-shadow: 0 0 15px rgba(255,0,0,0.3); }
+.link-gh:hover { color: var(--verde-pastel); border-color: var(--verde-pastel); box-shadow: 0 0 15px rgba(123,196,170,0.3); }
+
+/* ========== QUICK ACTION BUTTONS ========== */
+.btn-quick-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+}
+.quick-item:hover .btn-quick-link {
+    background: var(--verde-pastel);
+    color: var(--azul-marino);
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(126,215,166,0.3);
 }

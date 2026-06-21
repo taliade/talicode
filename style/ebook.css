@@ -39,24 +39,24 @@
     box-shadow: 0 0 10px var(--verde-pastel);
 }
 
-/* Tipografía retro pixel */
+/* Tipografía retro */
 .retro-title {
-    font-family: 'Press Start 2P', 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Poppins', sans-serif;
     font-size: clamp(1.8rem, 4vw, 3.2rem);
     line-height: 1.15;
     letter-spacing: -1px;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .retro-title-small {
-    font-family: 'Press Start 2P', 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Poppins', sans-serif;
     font-size: clamp(1.3rem, 2.8vw, 2rem);
     line-height: 1.2;
     color: var(--text-primary);
     margin-bottom: 0.8rem;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .gradient-word {

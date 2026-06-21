@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Configuración de Nodos de Servicio (Coordenadas normalizadas 0 a 1)
     const nodeConfigs = [
-        { nx: 0.12, ny: 0.60, type: 'cube', label: 'Web Dev', desc: 'React & Node.js', color: '#FF7BA5', glowColor: 'rgba(255, 123, 165, 0.4)' },
-        { nx: 0.32, ny: 0.35, type: 'cylinder', label: 'Automatizaciones', desc: 'n8n & GHL', color: '#7BC4AA', glowColor: 'rgba(123, 196, 170, 0.4)' },
-        { nx: 0.52, ny: 0.65, type: 'prism', label: 'Educación', desc: 'Talleres & Cursos', color: '#FFC83D', glowColor: 'rgba(255, 200, 61, 0.4)' },
-        { nx: 0.72, ny: 0.40, type: 'hexagon', label: 'Mentorías', desc: 'Guía 1 a 1', color: '#6D7785', glowColor: 'rgba(109, 119, 133, 0.4)' },
-        { nx: 0.88, ny: 0.60, type: 'sphere', label: 'Sistemas', desc: 'Ecosistemas CRM', color: '#FFB2C6', glowColor: 'rgba(255, 178, 198, 0.4)' }
+        { nx: 0.12, ny: 0.60, type: 'cube', label: 'Web Development', desc: 'Sitios y Apps', color: '#FF7BA5', glowColor: 'rgba(255, 123, 165, 0.4)' },
+        { nx: 0.32, ny: 0.35, type: 'cylinder', label: 'Automations', desc: 'Flujos de Trabajo', color: '#7BC4AA', glowColor: 'rgba(123, 196, 170, 0.4)' },
+        { nx: 0.52, ny: 0.65, type: 'prism', label: 'Education', desc: 'Cursos y Talleres', color: '#FFC83D', glowColor: 'rgba(255, 200, 61, 0.4)' },
+        { nx: 0.72, ny: 0.40, type: 'hexagon', label: 'Mentorship', desc: 'Mentoría 1 a 1', color: '#6D7785', glowColor: 'rgba(109, 119, 133, 0.4)' },
+        { nx: 0.88, ny: 0.60, type: 'sphere', label: 'Dashboards', desc: 'Métricas en Vivo', color: '#FFB2C6', glowColor: 'rgba(255, 178, 198, 0.4)' }
     ];
 
     let nodes = [];

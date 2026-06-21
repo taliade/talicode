@@ -10,6 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let width = 0;
     let height = 0;
 
+    // Parámetros de la personaje Tali definidos al principio para soporte dinámico
+    const tali = {
+        x: 0,
+        y: 0,
+        targetNodeIndex: 0,
+        currentNodeIndex: 0,
+        state: 'idle', // 'idle' o 'jumping' o 'warping'
+        progress: 0,
+        frame: 0,
+        angle: 0,
+        size: 55 // Tamaño del renderizado, se ajustará responsivamente
+    };
+
     // Cargar imagen de Tali
     const taliImg = new Image();
     taliImg.src = 'assets/images/tali_run.png';
@@ -25,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.width = width * dpr;
         canvas.height = height * dpr;
         ctx.scale(dpr, dpr);
+        
+        // Reducir el tamaño del personaje en pantallas pequeñas
+        tali.size = width < 600 ? 44 : 55;
     };
     resize();
     window.addEventListener('resize', resize);
@@ -40,13 +56,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let nodes = [];
     const initNodes = () => {
-        nodes = nodeConfigs.map(c => ({
-            ...c,
-            x: c.nx * width,
-            y: c.ny * height,
-            glow: 0, // Progreso del brillo (0 a 1)
-            pulseScale: 1
-        }));
+        const isMobile = width < 600;
+        nodes = nodeConfigs.map((c, index) => {
+            let nx = c.nx;
+            let ny = c.ny;
+            
+            if (isMobile) {
+                // Layout vertical zigzag adaptado para mobile portrait
+                // Previene que los nodos y textos colisionen horizontalmente
+                const mobilePositions = [
+                    { nx: 0.28, ny: 0.16 }, // DESARROLLO WEB
+                    { nx: 0.72, ny: 0.33 }, // AUTOMATIZACIONES
+                    { nx: 0.28, ny: 0.50 }, // EDUCACIÓN DIGITAL
+                    { nx: 0.72, ny: 0.67 }, // MENTORÍAS 1:1
+                    { nx: 0.35, ny: 0.84 }  // DASHBOARDS Y ANALÍTICAS
+                ];
+                nx = mobilePositions[index].nx;
+                ny = mobilePositions[index].ny;
+            }
+            
+            return {
+                ...c,
+                x: nx * width,
+                y: ny * height,
+                glow: 0,
+                pulseScale: 1
+            };
+        });
+        
+        // Reposicionar personaje si está idle para evitar saltos en resize
+        if (tali.state === 'idle' && nodes.length > 0) {
+            tali.x = nodes[tali.currentNodeIndex].x;
+            tali.y = nodes[tali.currentNodeIndex].y - (tali.size * 0.65);
+        }
     };
     initNodes();
     // Re-iniciar coordenadas de nodos en cada resize
@@ -71,41 +113,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 type: 'light'
             });
         }
-        // Fragmentos de código
-        for (let i = 0; i < 4; i++) {
+        // Fragmentos de código - Reducidos y optimizados en mobile para no obstruir
+        const isMobile = width < 600;
+        const numSnippets = isMobile ? 2 : 4;
+        const snippetDecay = isMobile ? 0.025 : 0.012;
+        const baseFontSize = isMobile ? 8 : 10;
+        const fontVar = isMobile ? 2 : 3;
+
+        for (let i = 0; i < numSnippets; i++) {
             const text = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
             particles.push({
-                x: x + (Math.random() - 0.5) * 20,
+                x: x + (Math.random() - 0.5) * 15,
                 y: y - 10,
-                vx: (Math.random() - 0.5) * 1.5,
-                vy: -Math.random() * 1.2 - 0.8,
+                vx: (Math.random() - 0.5) * 1.2,
+                vy: -Math.random() * 1.0 - 0.6,
                 text: text,
                 color: '#F6F3E8',
                 alpha: 1,
-                decay: 0.01,
-                size: Math.random() * 3 + 10, // Font size
+                decay: snippetDecay,
+                size: Math.random() * fontVar + baseFontSize,
                 type: 'code'
             });
         }
     };
 
-    // Parámetros de la personaje Tali
-    const tali = {
-        x: 0,
-        y: 0,
-        targetNodeIndex: 0,
-        currentNodeIndex: 0,
-        state: 'idle', // 'idle' o 'jumping' o 'warping'
-        progress: 0,
-        frame: 0,
-        angle: 0,
-        size: 55 // Tamaño del renderizado
-    };
-
     // Inicializar posición de Tali sobre el primer nodo
     if (nodes.length > 0) {
         tali.x = nodes[0].x;
-        tali.y = nodes[0].y;
+        tali.y = nodes[0].y - (tali.size * 0.65);
     }
 
     // Parallax del mouse
@@ -137,11 +172,14 @@ document.addEventListener('DOMContentLoaded', () => {
         tali.frame++;
 
         // Actualizar estados de Tali
+        const offset = tali.size * 0.65;
+        const jumpSpeed = width < 600 ? 0.028 : 0.022; // Salto levemente más rápido en mobile por distancias
+
         if (tali.state === 'idle') {
             const node = nodes[tali.currentNodeIndex];
             tali.x = node.x;
             // Bote suave mientras está parada
-            tali.y = node.y - 35 - Math.abs(Math.sin(tali.frame * 0.15)) * 6;
+            tali.y = node.y - offset - Math.abs(Math.sin(tali.frame * 0.15)) * 6;
             tali.angle = 0;
 
             // Permanecer 50 frames antes de saltar
@@ -156,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } 
         else if (tali.state === 'jumping') {
-            tali.progress += 0.022; // velocidad del salto
+            tali.progress += jumpSpeed;
             
             const start = nodes[tali.currentNodeIndex];
             const end = nodes[tali.targetNodeIndex];
@@ -172,8 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 tali.x = start.x + (end.x - start.x) * t;
                 
                 // Parábola
-                const jumpHeight = 110;
-                tali.y = start.y + (end.y - start.y) * t - Math.sin(t * Math.PI) * jumpHeight - 35;
+                const jumpHeight = Math.min(110, height * 0.25);
+                tali.y = start.y + (end.y - start.y) * t - Math.sin(t * Math.PI) * jumpHeight - offset;
                 
                 // Rotación dinámica durante el vuelo
                 tali.angle = (t - 0.5) * 0.5;
@@ -182,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     tali.state = 'idle';
                     tali.currentNodeIndex = tali.targetNodeIndex;
                     tali.x = end.x;
-                    tali.y = end.y - 35;
+                    tali.y = end.y - offset;
                     tali.frame = 0;
 
                     // Aterrizaje: Activar glow y emitir partículas
@@ -198,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const t = tali.progress;
 
             tali.x = start.x + (end.x - start.x) * t;
-            tali.y = start.y + (end.y - start.y) * t - 35;
+            tali.y = start.y + (end.y - start.y) * t - offset;
             tali.angle = Math.sin(t * Math.PI * 2) * 0.2;
 
             // Spawnear partículas de estela en el trayecto
@@ -220,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 tali.state = 'idle';
                 tali.currentNodeIndex = 0;
                 tali.x = end.x;
-                tali.y = end.y - 35;
+                tali.y = end.y - offset;
                 tali.frame = 0;
 
                 end.glow = 1.0;
@@ -524,37 +562,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 2. Dibujar Nodos 3D
+        const isMobile = width < 600;
+        const nodeSize = isMobile ? 22 : 30;
+        const yOffset = isMobile ? 28 : 35;
+        const descOffset = isMobile ? 38 : 46;
+        const labelFont = isMobile ? "bold 9px 'Inter', sans-serif" : "bold 11px 'Inter', sans-serif";
+        const descFont = isMobile ? "500 8px 'Inter', sans-serif" : "500 9px 'Inter', sans-serif";
+
         nodes.forEach(node => {
-            const size = 30;
             switch(node.type) {
                 case 'cube':
-                    drawCube(node.x, node.y, size, node.color, node.glow);
+                    drawCube(node.x, node.y, nodeSize, node.color, node.glow);
                     break;
                 case 'cylinder':
-                    drawCylinder(node.x, node.y, size * 0.7, size * 0.9, node.color, node.glow);
+                    drawCylinder(node.x, node.y, nodeSize * 0.7, nodeSize * 0.9, node.color, node.glow);
                     break;
                 case 'prism':
-                    drawPrism(node.x, node.y, size * 0.8, node.color, node.glow);
+                    drawPrism(node.x, node.y, nodeSize * 0.8, node.color, node.glow);
                     break;
                 case 'hexagon':
-                    drawHexagon(node.x, node.y, size * 0.7, node.color, node.glow);
+                    drawHexagon(node.x, node.y, nodeSize * 0.7, node.color, node.glow);
                     break;
                 case 'sphere':
-                    drawSphere(node.x, node.y, size * 0.7, node.color, node.glow);
+                    drawSphere(node.x, node.y, nodeSize * 0.7, node.color, node.glow);
                     break;
             }
 
             // Dibujar etiquetas de texto de los nodos (Glassmorphism sutil)
             ctx.save();
-            ctx.font = "bold 11px 'Inter', sans-serif";
+            ctx.font = labelFont;
             ctx.fillStyle = node.glow > 0 ? node.color : 'rgba(246, 243, 232, 0.8)';
             ctx.textAlign = 'center';
-            ctx.fillText(node.label, node.x, node.y + 35);
+            ctx.fillText(node.label, node.x, node.y + yOffset);
             
             // Subtexto / Descripción descriptiva del servicio
-            ctx.font = "500 9px 'Inter', sans-serif";
+            ctx.font = descFont;
             ctx.fillStyle = 'rgba(109, 119, 133, 0.6)';
-            ctx.fillText(node.desc, node.x, node.y + 46);
+            ctx.fillText(node.desc, node.x, node.y + descOffset);
             ctx.restore();
         });
 

@@ -751,3 +751,29 @@
     position: relative;
     font-size: 1.05rem;
 }
+
+/* ========== CONNECT SECTION ========== */
+.connect-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+.connect-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+.connect-card h2 {
+    margin-bottom: 1rem;
+}
+.connect-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}

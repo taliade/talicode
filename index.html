@@ -47,7 +47,16 @@
                 <h2>talidecode</h2>
             </a>
 
+            <div class="nav-menu">
+                <a href="#servicios">Servicios</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="pages/ebook.html">Recursos</a>
+                <a href="pages/contacto.html">Contacto</a>
+            </div>
+
             <div class="nav-actions">
+                <a href="pages/contacto.html" class="btn-nav">Agendar asesoría</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
                     <i class="fas fa-moon" id="themeIcon"></i>
                 </button>
@@ -61,20 +70,11 @@
 
         <div class="mobile-menu" id="mobileMenu">
             <a href="index.html">Inicio</a>
-            <div class="has-submenu">
-                <button class="submenu-btn" onclick="toggleSubmenu(event)">
-                    <a href="pages/servicios.html" class="submenu-main-link">Servicios</a>
-                    <span class="arrow" id="arrow">▼</span>
-                </button>
-                <div class="submenu" id="submenu">
-                    <a href="pages/ebook.html">📘 Ebook</a>
-                    <a href="pages/producto-bootcamp.html">⚙️ Taller GHL</a>
-                    <a href="pages/servicio-implementacion.html">🚀 Funnels</a>
-                </div>
-            </div>
-            <a href="pages/portafolio.html">Portafolio</a>
+            <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+            <a href="#proyectos" onclick="toggleMenu()">Proyectos</a>
+            <a href="#sobre-mi" onclick="toggleMenu()">Sobre mí</a>
+            <a href="pages/ebook.html">Recursos</a>
             <a href="pages/contacto.html">Contacto</a>
-            <a href="https://www.skool.com/vertice-b2b-1871" target="_blank">Comunidad</a>
         </div>
     </header>
 
@@ -83,89 +83,231 @@
         <div class="hero-container">
             <div class="hero-left">
                 <span class="brand-tag">
-                    <span class="tag-dot"></span> Sistemas y Mentoría Digital
+                    <span class="tag-dot"></span> DESARROLLO WEB • AUTOMATIZACIONES • MENTORÍAS • EDUCACIÓN
                 </span>
                 <h1 class="brand-title">
-                    CODIFICA.<br>
-                    CREA.<br>
-                    AUTOMATIZA.
+                    TU NEGOCIO<br>
+                    NECESITA MÁS<br>
+                    <span class="pink-word">QUE UNA WEB.</span>
                 </h1>
                 <p class="brand-desc">
-                    Diseño páginas web, mentorías y sistemas digitales para emprendedores que quieren vender mejor, ordenar sus procesos y dejar de pelearse con la tecnología.
+                    Creo sistemas digitales completos que atraen clientes, automatizan procesos y te dan claridad para crecer sin perder tiempo.
                 </p>
 
                 <div class="hero-ctas">
                     <a href="pages/contacto.html" class="btn-brand btn-primary-brand">
-                        Agendar asesoría
+                        Agendar asesoría <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="pages/portafolio.html" class="btn-brand btn-secondary-brand">
-                        Ver proyectos
+                    <a href="#proyectos" class="btn-brand btn-secondary-brand">
+                        Ver proyectos <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
-                <div class="hero-chips">
-                    <span class="chip"><i class="fas fa-check"></i> Diagnóstico personalizado</span>
-                    <span class="chip"><i class="fas fa-star"></i> Mentoría 1 a 1</span>
-                    <span class="chip"><i class="fas fa-shield-halved"></i> Ecosistemas robustos</span>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <strong>+50</strong>
+                            <span>Proyectos completados</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <strong>5.0</strong>
+                            <span>Valoración de clientes</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-circle-check"></i>
+                        <div>
+                            <strong>Sistemas</strong>
+                            <span>que generan resultados</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="hero-right">
                 <div class="canvas-container">
+                    <!-- HTML panel flotante (arriba izquierda) -->
+                    <div class="floating-panel code-html-panel">
+                        <div class="panel-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <pre><code><span class="tag">&lt;header</span> <span class="attr">class=</span><span class="val">"hero"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Tu negocio<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Sistema digital<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/header&gt;</span></code></pre>
+                    </div>
+
                     <canvas id="heroCanvas"></canvas>
+
+                    <!-- JS panel flotante (abajo izquierda) -->
+                    <div class="floating-panel code-js-panel">
+                        <div class="panel-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <pre><code><span class="keyword">function</span> <span class="function">automatizar</span>() {
+  <span class="keyword">const</span> tiempo = <span class="keyword">ahorrar</span>();
+  <span class="keyword">const</span> clientes = <span class="keyword">atraer</span>();
+  <span class="keyword">return</span> crecimiento;
+}</code></pre>
+                    </div>
+
+                    <!-- Analytics panel flotante (abajo derecha) -->
+                    <div class="floating-panel analytics-panel">
+                        <div class="analytics-header">
+                            <span>RESULTADOS REALES</span>
+                            <span class="badge">+127%</span>
+                        </div>
+                        <div class="analytics-value">Más conversiones</div>
+                        <div class="chart-container">
+                            <svg class="mini-chart" viewBox="0 0 100 30">
+                                <path d="M0,25 Q15,10 30,22 T60,5 T90,15 T100,2" fill="none" stroke="#7BC4AA" stroke-width="2.5" />
+                                <circle cx="100" cy="2" r="3" fill="#7BC4AA" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-explore">
+            <i class="fa-solid fa-computer-mouse"></i>
+            <span>Desliza para explorar</span>
+            <i class="fa-solid fa-chevron-down scroll-arrow"></i>
+        </div>
+    </section>
+
+    <!-- ========= SECCIÓN 2: COMPARACIÓN ========= -->
+    <section class="comparison-section" id="diferencia">
+        <div class="section-container">
+            <h2 class="section-title text-center">La diferencia entre una <span class="highlight-gray">web bonita</span> y un <span class="highlight-pink">sistema digital</span>.</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card card-bad">
+                    <div class="card-icon"><i class="fas fa-times-circle"></i></div>
+                    <h3>UNA WEB BONITA</h3>
+                    <ul>
+                        <li><i class="fas fa-xmark"></i> Solo se ve bien</li>
+                        <li><i class="fas fa-xmark"></i> No genera clientes</li>
+                        <li><i class="fas fa-xmark"></i> No automatiza nada</li>
+                        <li><i class="fas fa-xmark"></i> No te da claridad</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-vs">VS</div>
+                
+                <div class="comparison-card card-good">
+                    <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>UNA WEB QUE VENDE</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Atrae clientes 24/7</li>
+                        <li><i class="fas fa-check"></i> Automatiza procesos</li>
+                        <li><i class="fas fa-check"></i> Te ahorra tiempo</li>
+                        <li><i class="fas fa-check"></i> Te da resultados</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========= PICK YOUR PATCH ========= -->
-    <section class="pick-patch">
-        <div class="section-head-center">
-            <h2 class="retro-title-small">Pick your <span class="italic-em">patch</span></h2>
-            <p>Todo lo que tu negocio necesita para crecer — sin humo, directo al grano.</p>
-        </div>
-
-        <div class="patch-grid">
-            <a href="pages/servicios.html" class="patch-card card-mint">
-                <div class="mockup-retro">
-                    <div class="bars-bg bars-mint"></div>
-                    <div class="patch-emoji">🧠</div>
+    <!-- ========= SECCIÓN 3: CÓMO TRABAJO ========= -->
+    <section class="process-section" id="proceso-landing">
+        <div class="section-container">
+            <h2 class="section-title text-center">Cómo trabajo</h2>
+            <p class="section-subtitle text-center">Un proceso claro de 5 pasos diseñado para automatizar tu éxito.</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-steps">
+                    <div class="timeline-step">
+                        <div class="step-num-badge">1</div>
+                        <div class="step-content">
+                            <h3>Estrategia</h3>
+                            <p>Analizamos tu embudo de ventas actual y definimos las metas comerciales de tu ecosistema.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num-badge">2</div>
+                        <div class="step-content">
+                            <h3>Diseño</h3>
+                            <p>Creamos interfaces de conversión con micro-animaciones premium orientadas a captar la atención.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num-badge">3</div>
+                        <div class="step-content">
+                            <h3>Desarrollo</h3>
+                            <p>Escribimos código nativo optimizado para SEO, garantizando una carga veloz e integraciones seguras.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num-badge">4</div>
+                        <div class="step-content">
+                            <h3>Automatización</h3>
+                            <p>Sincronizamos tu CRM, flujos de correo y respuestas automáticas de WhatsApp para delegar las tareas repetitivas.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-num-badge">5</div>
+                        <div class="step-content">
+                            <h3>Capacitación</h3>
+                            <p>Te entrego dashboards interactivos y te enseño a leer tus datos para tomar decisiones sin dependencias.</p>
+                        </div>
+                    </div>
                 </div>
-                <h3>CRM con GHL</h3>
-                <p>Gestión inteligente de leads.</p>
-            </a>
-
-            <a href="pages/servicios.html" class="patch-card card-peach">
-                <div class="mockup-retro">
-                    <div class="bars-bg bars-peach"></div>
-                    <div class="patch-emoji">⚡</div>
-                </div>
-                <h3>Automatización</h3>
-                <p>Flujos que corren solos.</p>
-            </a>
-
-            <a href="pages/servicio-implementacion.html" class="patch-card card-lilac">
-                <div class="mockup-retro">
-                    <div class="bars-bg bars-lilac"></div>
-                    <div class="patch-emoji">🚀</div>
-                </div>
-                <h3>Funnels</h3>
-                <p>Embudos que convierten.</p>
-            </a>
-
-            <a href="pages/servicios.html" class="patch-card card-blue">
-                <div class="mockup-retro">
-                    <div class="bars-bg bars-blue"></div>
-                    <div class="patch-emoji">📊</div>
-                </div>
-                <h3>Dashboards</h3>
-                <p>Tus números en vivo.</p>
-            </a>
+            </div>
         </div>
     </section>
 
-    <!-- ========= ABOUT ========= -->
-    <section class="about-bloom">
+    <!-- ========= SECCIÓN 4: SERVICIOS ========= -->
+    <section class="services-section" id="servicios">
+        <div class="section-container">
+            <h2 class="section-title text-center">Servicios</h2>
+            <p class="section-subtitle text-center">Soluciones digitales de alto rendimiento para impulsar tu negocio.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon icon-pink"><i class="fas fa-file-invoice"></i></div>
+                    <h3>Landing Pages</h3>
+                    <p>Embudos y páginas optimizadas específicamente para convertir visitantes en clientes de pago.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-yellow"><i class="fas fa-globe"></i></div>
+                    <h3>Sitios Corporativos</h3>
+                    <p>Desarrollo web robusto para posicionar tu marca con velocidad y diseño de primer nivel.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-mint"><i class="fas fa-bolt"></i></div>
+                    <h3>Automatizaciones</h3>
+                    <p>Conexión de herramientas, CRM y APIs (n8n, GHL, Make) para que tu negocio funcione en piloto automático.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-blue"><i class="fas fa-chart-line"></i></div>
+                    <h3>Dashboards</h3>
+                    <p>Métricas integradas en tiempo real para visualizar el rendimiento de tus campañas en vivo.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-purple"><i class="fas fa-chalkboard-user"></i></div>
+                    <h3>Mentorías</h3>
+                    <p>Acompañamiento personalizado 1 a 1 para optimizar tu código, flujos de trabajo e ideas técnicas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon icon-orange"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Formación Digital</h3>
+                    <p>Cursos prácticos y talleres grupales de GoHighLevel para capacitar a tu equipo de trabajo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= ABOUT / SOBRE MÍ ========= -->
+    <section class="about-bloom" id="sobre-mi">
         <div class="about-grid">
             <div class="about-avatar-card">
                 <div class="avatar-wrap">
@@ -200,39 +342,71 @@
         </div>
     </section>
 
-    <!-- ========= PROCESO ========= -->
-    <section class="process">
-        <div class="section-head-center">
-            <h2 class="retro-title-small">3 pasos, <span class="italic-em">0 humo</span></h2>
-            <p>Así construyo sistemas que venden — claro, simple y medible.</p>
-        </div>
-
-        <div class="steps">
-            <div class="step">
-                <span class="step-num">01</span>
-                <h3>Diagnóstico</h3>
-                <p>Analizo tu negocio y encuentro oportunidades reales de automatización.</p>
-            </div>
-            <div class="step highlight-step">
-                <span class="step-num">02</span>
-                <h3>Sistema</h3>
-                <p>Construyo tu máquina de ventas: CRM, funnels, follow-ups.</p>
-            </div>
-            <div class="step">
-                <span class="step-num">03</span>
-                <h3>Escalado</h3>
-                <p>Optimizamos datos y escalamos resultados mes a mes.</p>
+    <!-- ========= SECCIÓN 5: CASOS DE ÉXITO ========= -->
+    <section class="cases-section" id="proyectos">
+        <div class="section-container">
+            <h2 class="section-title text-center">Casos de éxito</h2>
+            <p class="section-subtitle text-center">Resultados tangibles y flujos reales optimizados para la escala.</p>
+            
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-info">
+                        <span class="case-tag">CRM & Automatizaciones</span>
+                        <h3>Escalado Comercial de Agencia B2B</h3>
+                        <p class="case-desc">Configuración del CRM centralizado en GoHighLevel con notificaciones instantáneas de WhatsApp y funnels de prospección automatizados.</p>
+                        
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-num">+127%</span>
+                                <span class="metric-label">Conversiones</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-num">7 días</span>
+                                <span class="metric-label">Tiempo récord</span>
+                            </div>
+                        </div>
+                        
+                        <blockquote class="case-testimonial">
+                            <p>"El sistema centralizado nos permitió responder instantáneamente a cada lead agendado. La tasa de conversión aumentó drásticamente."</p>
+                            <cite>— Director de Operaciones B2B</cite>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="case-visual">
+                        <div class="ba-container">
+                            <div class="ba-box ba-before">
+                                <h4>ANTES</h4>
+                                <ul>
+                                    <li>Planillas manuales dispersas</li>
+                                    <li>Llamadas de seguimiento retrasadas</li>
+                                    <li>Falta de visibilidad de embudo</li>
+                                </ul>
+                            </div>
+                            <div class="ba-vs">VS</div>
+                            <div class="ba-box ba-after">
+                                <h4>DESPUÉS</h4>
+                                <ul>
+                                    <li>Dashboard comercial 24/7</li>
+                                    <li>Notificaciones push automáticas</li>
+                                    <li>12 leads calificados en la primera semana</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ========= CTA FINAL ========= -->
-    <section class="cta-final">
-        <h2>Dejá de depender de tu tiempo <br><em>para vender.</em></h2>
-        <a href="pages/contacto.html" class="btn btn-dark btn-xl">
-            Empezar ahora <i class="fas fa-arrow-right"></i>
-        </a>
-        <p class="marca-frase">"No vendo páginas. Construyo sistemas que generan clientes."</p>
+    <!-- ========= SECCIÓN 6: CTA FINAL ========= -->
+    <section class="cta-final-section">
+        <div class="cta-container">
+            <h2>¿Listo para construir algo más que una web?</h2>
+            <p>Agenda una llamada de diagnóstico gratuita y diseñemos un sistema que venda por vos las 24 horas.</p>
+            <a href="pages/contacto.html" class="btn-brand btn-primary-brand btn-lg">
+                Agendar asesoría <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
     </section>
 
     <footer class="footer">

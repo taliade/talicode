@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- ========= FUENTES ========= -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -78,58 +78,41 @@
         </div>
     </header>
 
-    <!-- ========= HERO BLOOM ========= -->
-    <section class="bloom-hero">
-        <div class="hero-bloom-card">
-            <div class="bloom-left">
-                <span class="retro-tag">
-                    <span class="tag-dot"></span> Retro joy, re-bloomed
+    <!-- ========= HERO INTERACTIVO ========= -->
+    <section class="interactive-hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <span class="brand-tag">
+                    <span class="tag-dot"></span> Sistemas y Mentoría Digital
                 </span>
-                <h1 class="retro-title">
-                    Sistemas<br>
-                    que venden<br>
-                    <span class="gradient-word">por vos.</span>
+                <h1 class="brand-title">
+                    CODIFICA.<br>
+                    CREA.<br>
+                    AUTOMATIZA.
                 </h1>
-                <p class="bloom-desc">
-                    Automatización, funnels y CRM hechos con GoHighLevel para que dejes 
-                    de perseguir clientes y empieces a escalar sin límites de tiempo.
+                <p class="brand-desc">
+                    Diseño páginas web, mentorías y sistemas digitales para personas que quieren crecer sin complicarse con la tecnología.
                 </p>
 
                 <div class="hero-ctas">
-                    <a href="pages/servicios.html" class="btn-retro btn-primary-retro">
-                        Ver servicios
+                    <a href="pages/contacto.html" class="btn-brand btn-primary-brand">
+                        Agendar Asesoría
                     </a>
-                    <a href="pages/contacto.html" class="btn-retro btn-secondary-retro">
-                        Agendar diagnóstico
+                    <a href="pages/portafolio.html" class="btn-brand btn-secondary-brand">
+                        Ver Proyectos
                     </a>
                 </div>
 
                 <div class="hero-chips">
-                    <span class="chip"><i class="fas fa-check"></i> Diagnóstico gratis</span>
-                    <span class="chip"><i class="fas fa-star"></i> GHL Expert</span>
-                    <span class="chip"><i class="fas fa-shield-halved"></i> Resultados reales</span>
+                    <span class="chip"><i class="fas fa-check"></i> Diagnóstico personalizado</span>
+                    <span class="chip"><i class="fas fa-star"></i> Mentoría 1 a 1</span>
+                    <span class="chip"><i class="fas fa-shield-halved"></i> Ecosistemas robustos</span>
                 </div>
             </div>
 
-            <div class="bloom-right">
-                <div class="bloom-scene">
-                    <div class="sky-cloud cloud-1"></div>
-                    <div class="sky-cloud cloud-2"></div>
-                    <div class="hill hill-back"></div>
-                    <div class="hill hill-front"></div>
-
-                    <div class="pipe-scene">
-                        <div class="pipe-top"></div>
-                        <div class="pipe-body"></div>
-                    </div>
-
-                    <div class="flower">
-                        <div class="flower-stem"></div>
-                        <div class="flower-head"></div>
-                    </div>
-
-                    <div class="sparkle sp1">✨</div>
-                    <div class="sparkle sp2">⭐</div>
+            <div class="hero-right">
+                <div class="canvas-container">
+                    <canvas id="heroCanvas"></canvas>
                 </div>
             </div>
         </div>
@@ -256,6 +239,7 @@
         <p>© 2026 TALIDECODE — Hecho con ❤️ + código</p>
     </footer>
 
+    <script src="js/hero-canvas.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

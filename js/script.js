@@ -84,4 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (arrow) arrow.classList.remove('rotate');
         });
     });
+
+    // Cerrar menú automáticamente si pasa a desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1025) {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('hamburger');
+            const submenu = document.getElementById('submenu');
+            const arrow = document.getElementById('arrow');
+            if (menu) menu.classList.remove('active');
+            if (btn) btn.classList.remove('active');
+            if (submenu) submenu.classList.remove('open');
+            if (arrow) arrow.classList.remove('rotate');
+        }
+    });
 });

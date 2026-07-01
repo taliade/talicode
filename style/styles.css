@@ -833,9 +833,49 @@ select:focus-visible,
     background: #ff9cbd;
 }
 
-@media (max-width: 900px) {
-    .nav-menu { display: none; }
-    .btn-nav { display: none; }
+/* ========== NAVBAR RESPONSIVE ========== */
+/* Desktop (>= 1025px) */
+@media (min-width: 1025px) {
+    .nav-menu {
+        display: flex;
+    }
+    .navbar .btn-nav {
+        display: inline-flex;
+    }
+    .hamburger {
+        display: none !important;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .mobile-menu {
+        display: none !important;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Tablet y mobile (<= 1024px) */
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: none !important;
+    }
+    .navbar .btn-nav {
+        display: none !important;
+    }
+    .hamburger {
+        display: flex !important;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .mobile-menu {
+        display: flex !important;
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 /* ========== HERO LEFT REFINEMENTS ========== */
@@ -1646,5 +1686,34 @@ select:focus-visible,
     }
     .btn-brand i, .btn-retro i, .btn i {
         font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Desactivar efectos pesados en mobile para optimizar performance (PageSpeed) */
+    .glow,
+    .blur-bg,
+    .decorative-light,
+    .hero-decoration,
+    .floating-panel,
+    .avatar-img {
+        filter: none !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+    }
+    
+    .floating-card,
+    .animated-code,
+    .decorative-card {
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
     }
 }

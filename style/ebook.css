@@ -411,7 +411,7 @@
     font-weight: 700;
     box-shadow: 0 6px 18px rgba(255,140,66,0.4);
 }
-.pricing-card h3 {
+.pricing-card h3, .pricing-card h2 {
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;

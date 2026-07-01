@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TALIDECODE | Arquitecta Digital</title>
@@ -46,6 +48,61 @@
     
     <!-- ========= CSS ========= -->
     <link rel="stylesheet" href="style/styles.css">
+
+    <!-- ========= NAVEGACIÓN AGÉNTICA (DATOS ESTRUCTURADOS) ========= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "TALIDECODE",
+      "url": "https://www.talidecode.com",
+      "logo": "https://www.talidecode.com/assets/icons/apple-touch-icon.png",
+      "image": "https://www.talidecode.com/assets/icons/apple-touch-icon.png",
+      "description": "Construyo sistemas que venden por vos 24/7. Automatización, funnels y CRM para escalar tu negocio.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AR"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Talia A. Rodrigues",
+        "jobTitle": "Arquitecta Digital",
+        "sameAs": [
+          "https://www.instagram.com/tali_code/",
+          "https://www.linkedin.com/in/talia-rodrigues-20/",
+          "https://github.com/taliade"
+        ]
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Funnels de Venta"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Automatizaciones"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mentorías"
+          }
+        }
+      ],
+      "potentialAction": {
+        "@type": "Action",
+        "name": "Agendar asesoría",
+        "target": "https://www.talidecode.com/pages/contacto.html"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -54,7 +111,7 @@
         <nav class="navbar">
             <a href="index.html" class="logo">
                 <span class="logo-dot"></span>
-                <h2>talidecode</h2>
+                <span class="logo-text">talidecode</span>
             </a>
 
             <div class="nav-menu">
@@ -70,11 +127,11 @@
                 <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
                     <i class="fas fa-moon" id="themeIcon"></i>
                 </button>
-                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" onclick="toggleMenu()">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </button>
             </div>
         </nav>
 
@@ -321,15 +378,18 @@
         <div class="about-grid">
             <div class="about-avatar-card">
                 <div class="avatar-wrap">
-                    <img src="assets/images/avatar.png" alt="Tali" class="avatar-img">
+                    <picture>
+                        <source srcset="assets/images/avatar.webp" type="image/webp">
+                        <img src="assets/images/avatar.png" alt="Talia A. Rodrigues, Arquitecta Digital" class="avatar-img" loading="lazy" width="140" height="140">
+                    </picture>
                     <span class="status-dot"></span>
                 </div>
                 <h3>Tali</h3>
                 <p class="role">Arquitecta Digital · GHL Expert</p>
                 <div class="socials">
-                    <a href="https://www.instagram.com/tali_code/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/talia-rodrigues-20/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/tali_code/" target="_blank" aria-label="Instagram de Tali"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/talia-rodrigues-20/" target="_blank" aria-label="LinkedIn de Talia Rodrigues"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube de Tali"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
 

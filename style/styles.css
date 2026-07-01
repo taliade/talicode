@@ -99,7 +99,7 @@ img { max-width: 100%; display: block; }
     0%,100% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.2); opacity: 0.7; }
 }
-.logo h2 {
+.logo h2, .logo-text {
     font-weight: 800;
     font-size: 1.3rem;
     color: var(--text-primary);
@@ -137,6 +137,19 @@ img { max-width: 100%; display: block; }
     gap: 5px; 
     cursor: pointer; 
     padding: 6px;
+    background: none;
+    border: none;
+}
+
+/* Focus visible states for keyboard accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.hamburger:focus-visible {
+    outline: 3px solid var(--brand-pink);
+    outline-offset: 3px;
 }
 .hamburger span {
     width: 26px; 
@@ -153,7 +166,7 @@ img { max-width: 100%; display: block; }
 .mobile-menu {
     position: fixed;
     top: 75px; 
-    left: -100%;
+    left: 0;
     width: 100%;
     height: calc(100vh - 75px);
     background: var(--bg-body);
@@ -162,10 +175,11 @@ img { max-width: 100%; display: block; }
     align-items: center;
     padding-top: 3rem;
     gap: 0.5rem;
-    transition: left .4s cubic-bezier(.4,0,.2,1);
+    transform: translateX(-100%);
+    transition: transform .4s cubic-bezier(.4,0,.2,1);
     z-index: 999;
 }
-.mobile-menu.active { left: 0; }
+.mobile-menu.active { transform: translateX(0); }
 
 .mobile-menu > a, 
 .submenu-btn {

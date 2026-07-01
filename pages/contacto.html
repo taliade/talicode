@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | TALIDECODE</title>
@@ -33,6 +35,62 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wiq2u6ki45");
 </script>
+
+    <!-- ========= NAVEGACIÓN AGÉNTICA (DATOS ESTRUCTURADOS) ========= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contacto | TALIDECODE",
+      "description": "Formas de contacto con Talia A. Rodrigues (TALIDECODE) para agendar asesorías estratégicas de automatización y funnels.",
+      "url": "https://www.talidecode.com/pages/contacto.html",
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué incluye la asesoría?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Incluye una videollamada de 45 minutos donde analizamos tu situación actual y definimos próximos pasos concretos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito tener una web para reservar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Podemos trabajar desde una idea inicial o desde un negocio ya en funcionamiento."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿La asesoría queda grabada?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, opcionalmente puede grabarse para que puedas revisarla luego."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Trabajas con automatizaciones?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Diseño sistemas digitales, automatizaciones, funnels, CRM y soluciones personalizadas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo contratar el desarrollo luego?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. La asesoría puede servir como punto de partida para un proyecto más grande."
+            }
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -41,15 +99,15 @@
         <nav class="navbar">
             <a href="../index.html" class="logo">
                 <span class="logo-dot"></span>
-                <h2>talidecode</h2>
+                <span class="logo-text">talidecode</span>
             </a>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
                     <i class="fas fa-moon" id="themeIcon"></i>
                 </button>
-                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" onclick="toggleMenu()">
                     <span></span><span></span><span></span>
-                </div>
+                </button>
             </div>
         </nav>
         <div class="mobile-menu" id="mobileMenu">
@@ -195,11 +253,11 @@
             <p>Comparto desarrollo web, automatización, sistemas digitales, contenido educativo y proyectos en construcción.</p>
             
             <div class="social-icons-row" style="display:flex; justify-content:center; gap:1.5rem; margin: 2rem 0; flex-wrap:wrap;">
-                <a href="https://www.instagram.com/tali_code/" target="_blank" class="social-icon-link link-ig" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@tali_code" target="_blank" class="social-icon-link link-tt" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.linkedin.com/in/talia-rodrigues-20/" target="_blank" class="social-icon-link link-ln" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.youtube.com/@TaliDeCode" target="_blank" class="social-icon-link link-yt" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-youtube"></i></a>
-                <a href="https://github.com/taliade" target="_blank" class="social-icon-link link-gh" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/tali_code/" target="_blank" class="social-icon-link link-ig" aria-label="Instagram de TaliCode" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@tali_code" target="_blank" class="social-icon-link link-tt" aria-label="TikTok de TaliCode" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/talia-rodrigues-20/" target="_blank" class="social-icon-link link-ln" aria-label="LinkedIn de Talia Rodrigues" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@TaliDeCode" target="_blank" class="social-icon-link link-yt" aria-label="YouTube de TaliCode" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/taliade" target="_blank" class="social-icon-link link-gh" aria-label="GitHub de Talia Rodrigues" style="font-size:2rem; width:60px; height:60px; display:flex; justify-content:center; align-items:center; border-radius:50%; background:var(--bg-body); border:1px solid var(--border); transition:all 0.3s;"><i class="fab fa-github"></i></a>
             </div>
 
             <a href="https://beacons.ai/talidecode_hub" target="_blank" rel="noopener noreferrer" class="btn-retro btn-primary-retro" style="justify-content: center; display: inline-flex;">

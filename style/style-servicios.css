@@ -433,9 +433,9 @@
 .l2 { animation-delay: 0.7s; }
 .l3 { animation-delay: 1.4s; }
 @keyframes dropLead {
-    0% { top: -20px; opacity: 0; }
-    30% { opacity: 1; }
-    100% { top: 120px; opacity: 0; transform: translateX(-50%) scale(0.3); }
+    0% { transform: translate(-50%, -20px) scale(1); opacity: 0; }
+    30% { transform: translate(-50%, 22px) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, 120px) scale(0.3); opacity: 0; }
 }
 
 .front-foot h3 {

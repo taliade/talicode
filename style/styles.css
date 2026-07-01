@@ -1579,4 +1579,72 @@ select:focus-visible,
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    /* ========== CRO RESPONSIVE OVERRIDES ========== */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    .service-card {
+        padding: 1.5rem !important;
+    }
+    .service-card h3 {
+        font-size: 1.3rem !important;
+    }
+    .service-features {
+        margin: 1rem 0 !important;
+        gap: 0.5rem !important;
+    }
+    
+    /* Spacing and margins on mobile */
+    .interactive-hero {
+        padding: 100px 1rem 40px !important;
+    }
+    .comparison-section, .timeline-section, .services-section, .authority-section, .cta-final-section, .cases-section {
+        padding: 3.5rem 1.2rem !important;
+    }
+    
+    /* Heading hierarchy mobile */
+    .brand-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 1rem !important;
+    }
+    .brand-desc {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    .section-title {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+    .section-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Responsive buttons override */
+    .btn-brand, .btn-retro, .btn-nav, .btn-flip, .btn, .btn-nav-action {
+        max-width: 100% !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        text-align: center !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-brand, .btn-retro, .btn-nav, .btn-flip, .btn {
+        font-size: 0.95rem !important;
+        padding: 0.8rem 1.2rem !important;
+    }
+    .btn-brand i, .btn-retro i, .btn i {
+        font-size: 1rem !important;
+    }
 }

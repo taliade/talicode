@@ -1489,3 +1489,94 @@ select:focus-visible,
     padding: 1rem 2.2rem;
     font-size: 1rem;
 }
+
+/* ========== CRO ADDITIONS: FOR WHO & AUTHORITY ========== */
+.for-who-section {
+    padding: 6rem 1.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg-body);
+}
+.for-who-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.for-who-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+.for-who-list li i {
+    color: var(--brand-pink);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.authority-section {
+    padding: 6rem 1.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg-card);
+}
+[data-theme="dark"] .authority-section {
+    background: var(--bg-body);
+}
+.authority-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.authority-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: center;
+}
+.authority-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    background: var(--bg-body);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+}
+[data-theme="dark"] .authority-card {
+    background: var(--bg-card);
+}
+.authority-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.authority-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+.authority-list li i {
+    color: var(--brand-mint);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .authority-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
